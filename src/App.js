@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react"
+// console.log(process.env.REACT_APP_YELP_API_KEY)
 import { Switch, Route } from "react-router-dom"
 import HomePage from "./components/HomePage"
 import WishlistsCollection from "./components/WishlistsCollection"

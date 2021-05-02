@@ -1,4 +1,4 @@
-export const API_BASE_URL = "https://api.yelp.com/v3/"
+export const API_BASE_URL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3";
 
 // FIX ME: Remove this token
 // NOTE: as long as this token is saved in the frontend, the application is not production ready.
@@ -6,4 +6,4 @@ export const API_BASE_URL = "https://api.yelp.com/v3/"
 // For simplicity and the sake of this tutorial, I'll just leave it here like this
 // But just bear in mind: NEVER EVER save a bearer token inside the frontend code
 
-expost const BEARER = 
+export const BEARER_TOKEN = process.env.REACT_APP_YELP_API_KEY;
