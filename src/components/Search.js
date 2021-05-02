@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import {API_BASE_URL, BEARER_TOKEN} from '../hooks/yelp-api/config.js'
 
-function Search(){
+function Search({ setPlaces }){
 
     const [term, setTerm] = useState([])
     const [location, setLocation] = useState([])
@@ -27,10 +27,10 @@ function Search(){
 // **** REFACTOR @ END - Think can delete axios, prop-types, query-string, react-axios, yelp-api, proxy: localhost/3000 ****
 
 // CORS-Anywhere workaround
-
+        
         fetch(`${API_BASE_URL}/businesses/search?term=${term}&location=${location}&limit=50`, requestOptions)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(placesArr => setPlaces(placesArr.businesses))
         .catch(error => console.log('error', error));
     }
 

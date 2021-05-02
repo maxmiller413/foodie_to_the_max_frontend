@@ -1,16 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import Search from "./Search"
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 
 function HomePage(){
+
+    const [places, setPlaces] = useState([])
+
     return(
         <div>
             <header>
-                <Search />
+                <Search setPlaces={setPlaces}/>
             </header>
             <div>
-                <PlacesCollection />
+                <PlacesCollection places={places}/>
             </div>
             <div>
                 <Filter />
