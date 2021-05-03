@@ -7,12 +7,49 @@ import HomePage from "./components/HomePage"
 import WishlistsCollection from "./components/WishlistsCollection"
 import WishlistCard from "./components/WishlistCard"
 import WishlistPlaceCard from "./components/WishlistPlaceCard"
+import SignUp from "./components/SignUp"
+import Login from "./components/Login"
+import NavBar from "./components/NavBar"
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState(null)
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    // const token = true
+    const userId = localStorage.getItem("userId")
+    if (userId) {
+    fetch(`http://localhost:3000/me/${userId}`)
+    .then(r => r.json())
+    // response => setCurrentUser
+    .then(user => setCurrentUser(user))
+    }
+  }, [])
+
+  function handleToggleDarkMode(){
+    setIsDarkMode(isDarkMode => !isDarkMode)
+  }
+
   return (
-    <div>
-      
+    <div className={isDarkMode ? "App" : "App-light"} >
+      <NavBar 
+        title="foodie_to_the_max"
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={handleToggleDarkMode}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+        // setWishlists={setWishlists}
+      />
       <Switch>
+
+        <Route exact path="/signup">
+          <SignUp setCurrentUser={setCurrentUser} />
+        </Route>
+
+        <Route exact path="/login">
+          <Login setCurrentUser={setCurrentUser} />
+        </Route>
 
         <Route exact path="/wishlist_places/:id">
           <WishlistPlaceCard/>
@@ -27,7 +64,13 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          <HomePage/>
+          {currentUser ? 
+              (<> 
+                <h1 className="letter"> Welcome, {currentUser.username} </h1>
+                <HomePage currentUser={currentUser} /> 
+              </>) 
+              : 
+              (<h1 className="letter"> Please Login or SignUp </h1>)}
         </Route>
 
       </Switch>

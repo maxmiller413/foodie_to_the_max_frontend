@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* test car_finder css */
+
+.letter{
+  color: rgb(94, 94, 36);
+}
+
+/* NavBar */
+.nav-icon:hover{
+  color:var(--mainBlue);
+}
+.letter{
+  color: rgb(94, 94, 36);
+}
+
+/* Dark Mode */
+body.dark {
+	background: #292C35;
+}
+
+/* APP */
+.App {
+  color: var(--color);
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.App.light {
+  --color: var(--black);
+  --background-color: var(--white);
+  --primary: var(--mid-turquoise);
+}
