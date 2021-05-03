@@ -3,11 +3,14 @@ import React from "react"
 function PlaceCard({ place }){
     console.log(place.categories)
 
-const {id, name, image_url, categories} = place
-console.log(categories)
+const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url} = place
 
-const placeCategoriesArr = categories.map(category => (
-    <li> {category.title} </li>
+console.log(place)
+
+const placeCategoriesArr = place.categories.map((category, index) => (
+    <li key={index}> 
+        {category.title} 
+    </li>
     
 ))
     return(
