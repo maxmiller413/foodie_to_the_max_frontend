@@ -8,17 +8,21 @@ function HomePage(){
     const [places, setPlaces] = useState([])
 
     return(
-        <div>
-            <header>
-                <Search setPlaces={setPlaces}/>
-            </header>
-            <div>
-                <PlacesCollection places={places}/>
+        <section className="section">
+            <div className="tile is-ancestor">
+                <div className="title is-vertical is-8">
+                    <header>
+                        <Search setPlaces={setPlaces} className="tile is-parent"/>
+                    </header>
+                    <div>
+                        <PlacesCollection places={places} className="tile is-parent"/>
+                    </div>
+                    <div>
+                        <Filter className="tile is-parent"/>
+                    </div>
+                </div>
             </div>
-            <div>
-                <Filter />
-            </div>
-        </div>
+        </section>
     )
 }
 

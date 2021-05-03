@@ -31,7 +31,7 @@ function Search({ setPlaces }){
         fetch(`${API_BASE_URL}/businesses/search?term=${term}&location=${location}&limit=50`, requestOptions)
         .then(response => response.json())
         .then(placesArr => setPlaces(placesArr.businesses))
-        .catch(error => console.log('error', error));
+        // .catch(error => console.log('error', error));
     }
 
     return(

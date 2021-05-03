@@ -65,34 +65,34 @@ function SignUp ({ setCurrentUser }) {
 
     return(
         <form onSubmit={handleSubmit} autoComplete="off">
-        <h1>Signup</h1>
+            <h1>Signup</h1>
 
-        <label>Username</label>
-        <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleChange}
-        />
+            <label>Username</label>
+            <input
+                type="text"
+                name="username"
+                value={username}
+                onChange={handleChange}
+            />
 
-        <label>Password</label>
-        <input
-            type="password"
-            name="password"
-            autoComplete="current-password"
-            value={password}
-            onChange={handleChange}
-        />
+            <label>Password</label>
+            <input
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                value={password}
+                onChange={handleChange}
+            />
 
-        {errors.map((error) => (
-            <p key={error} style={{ color: "red" }}>
-            {error}
-            </p>
-        ))}
+            {errors.map((error) => (
+                <p key={error} style={{ color: "red" }}>
+                {error}
+                </p>
+            ))}
 
-        <input type="submit" value="Signup" />
+            <input type="submit" value="Signup" />
 
-    </form>
+        </form>
     )
 }
 

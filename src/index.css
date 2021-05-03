@@ -1,45 +1,45 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 /* test car_finder css */
 
-.letter{
+/* .letter{
   color: rgb(94, 94, 36);
-}
+} */
 
 /* NavBar */
-.nav-icon:hover{
+/* .nav-icon:hover{
   color:var(--mainBlue);
-}
-.letter{
+} */
+/* .letter{
   color: rgb(94, 94, 36);
-}
+} */
 
 /* Dark Mode */
-body.dark {
+/* body.dark {
 	background: #292C35;
-}
+} */
 
 /* APP */
-.App {
+/* .App {
   color: var(--color);
   background-color: var(--background);
   min-height: 100vh;
-}
+} */
 
-.App.light {
+/* .App.light {
   --color: var(--black);
   --background-color: var(--white);
   --primary: var(--mid-turquoise);
-}
+} */

@@ -56,15 +56,15 @@ function Login ({ setCurrentUser }) {
     return (
         <div>
           <form onSubmit={handleSubmit} >
-            <h1 className="letter"> Login</h1>
-            <label className="letter"> Username</label>
+            <h1 > Login</h1>
+            <label > Username</label>
             <input
               type="text"
               name="username"
               value={formData.username}
               onChange={handleChange}
             />
-            <label className="letter" >Password</label>
+            <label >Password</label>
             <input
               type="password"
               name="password"

@@ -14,16 +14,37 @@ const placeCategoriesArr = place.categories.map((category, index) => (
     
 ))
     return(
-        <div>
-            <h1> {name} </h1>
-            <button>
+        <div className="card">
+            <header className="card-header"> 
+                <p className="card-header-title"> {name} </p>
+            </header>
+                
+            <div className="card-image">
+                <figure className="image is-4by3">
+                    <img src={image_url} alt={name}/>
+                </figure>
+            </div> 
+
+            <div class="card-content">
+                <div class="content">
+                    <p>Categories:</p>
+                    <ul> 
+                        {placeCategoriesArr}
+                    </ul>
+                </div>
+                <div class="content">
+                    <p>Categories:</p>
+                    <ul> 
+                        {placeCategoriesArr}
+                    </ul>
+                </div>
+            </div>
+            
+
+            <button id={id}>
                 Add to Wishlist!
             </button>
-            <img src={image_url} /> 
-            <p>Categories:</p>
-            <ul> 
-                {placeCategoriesArr}
-            </ul>
+            
         </div>
         
     )

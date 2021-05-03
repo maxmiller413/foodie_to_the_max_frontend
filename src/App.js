@@ -14,7 +14,7 @@ import NavBar from "./components/NavBar"
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   useEffect(() => {
     // const token = true
@@ -42,7 +42,6 @@ function App() {
         // setWishlists={setWishlists}
       />
       <Switch>
-
         <Route exact path="/signup">
           <SignUp setCurrentUser={setCurrentUser} />
         </Route>
@@ -64,17 +63,16 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          {currentUser ? 
-              (<> 
-                <h1 className="letter"> Welcome, {currentUser.username} </h1>
-                <HomePage currentUser={currentUser} /> 
-              </>) 
-              : 
-              (<h1 className="letter"> Please Login or SignUp </h1>)}
+          {currentUser ? (
+            <> 
+              <h1 className="subtitle"> Welcome, {currentUser.username} </h1>
+              <HomePage currentUser={currentUser} /> 
+            </>
+            ) : (
+              <h1 className="subtitle"> Please Login or SignUp </h1>
+          )}
         </Route>
-
       </Switch>
-
     </div>
   )
 }
