@@ -15,6 +15,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [isDarkMode, setIsDarkMode] = useState(true)
+  const [wishlists, setWishlists] = useState([])
 
   useEffect(() => {
     // const token = true
@@ -27,8 +28,22 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    const userId = localStorage.getItem("userId")
+    if (userId){
+      fetch(`http://localhost:3000/users/${userId}`)
+      .then((r) => r.json())
+      .then((data) => setWishlists(data.wishlists))
+    } 
+  }, [])
+
   function handleToggleDarkMode(){
     setIsDarkMode(isDarkMode => !isDarkMode)
+  }
+
+  function handleNewWishlist(newWishlist){
+    const updatedWishlistArr = [...wishlists, newWishlist]
+    setWishlists(updatedWishlistArr)
   }
 
   return (
@@ -59,14 +74,17 @@ function App() {
         </Route>
 
         <Route exact path="/wishlists">
-          <WishlistsCollection/>
+          <WishlistsCollection wishlists={wishlists}/>
         </Route>
 
         <Route exact path="/">
           {currentUser ? (
             <> 
               <h1 className="subtitle"> Welcome, {currentUser.username} </h1>
-              <HomePage currentUser={currentUser} /> 
+              <HomePage 
+                currentUser={currentUser} 
+                addNewWishlist={handleNewWishlist}
+              /> 
             </>
             ) : (
               <h1 className="subtitle"> Please Login or SignUp </h1>

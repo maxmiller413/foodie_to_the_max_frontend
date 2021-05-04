@@ -1,8 +1,15 @@
 import React from "react"
 
-function WishlistCard(){
+function WishlistCard({ wishlist }){
+    console.log(wishlist)
+    const { title, user_id } = wishlist
     return(
-        <h1> WishlistCard </h1>
+        <div className="card">
+            <header className="card-header"> 
+                <p className="card-header-title"> {title} </p>
+            </header>
+        </div>
+
     )
 }
 

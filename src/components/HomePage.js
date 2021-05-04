@@ -3,7 +3,7 @@ import Search from "./Search"
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 
-function HomePage(){
+function HomePage({currentUser, addNewWishlist}){
 
     const [places, setPlaces] = useState([])
 
@@ -15,7 +15,12 @@ function HomePage(){
                         <Search setPlaces={setPlaces} className="tile is-parent"/>
                     </header>
                     <div>
-                        <PlacesCollection places={places} className="tile is-parent"/>
+                        <PlacesCollection 
+                            places={places} 
+                            currentUser={currentUser} 
+                            className="tile is-parent"
+                            addNewWishlist={addNewWishlist}
+                        />
                     </div>
                     <div>
                         <Filter className="tile is-parent"/>

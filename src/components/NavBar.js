@@ -57,7 +57,7 @@ return (
                 
                 {currentUser ? (
                     <>
-                        <Link to="/wishlist" className="nav-item" > Wishlist </Link>
+                        <Link to="/wishlists" className="nav-item" > Wishlists </Link>
                         <Link to="/logout" className="nav-item" onClick={handleLogout} > Logout </Link>
                     </>
                         ) : (

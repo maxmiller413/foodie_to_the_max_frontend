@@ -3,12 +3,14 @@ import PlaceCard from "./PlaceCard"
 import './PlacesCollection.module.css';
 
 
-function PlacesCollection({ places }){
+function PlacesCollection({ places, currentUser, addNewWishlist }){
     console.log(places)
     const placesArr = places.map(place => (
         <PlaceCard 
             key={place.id}
             place={place}
+            currentUser={currentUser}
+            addNewWishlist={addNewWishlist}
         />
     ))
     return(
