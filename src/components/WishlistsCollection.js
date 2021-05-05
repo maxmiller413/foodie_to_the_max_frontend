@@ -16,7 +16,7 @@ function WishlistsCollection({ wishlists }){
             <div className="columns">
                 <div className="column"> </div>
                 <div className="search-results"> 
-                    {/* <p className="notification">Search Results:</p> */}
+                    <p className="notification">Wishlists:</p>
                     <ul className="notification">
                         {wishlistsArr}
                     </ul>

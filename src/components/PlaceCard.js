@@ -1,6 +1,6 @@
 import React from "react"
 
-function PlaceCard({ place, currentUser, addNewWishlist }){
+function PlaceCard({ place, currentUser, addNewWishlist, addNewWishlistPlace }){
     console.log(place.categories)
 
     const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url} = place
@@ -17,11 +17,13 @@ function PlaceCard({ place, currentUser, addNewWishlist }){
         // history.push('/wishlist')
         
         const wishlistObject = {
-        user_id: currentUser.id,
-        title: "test"
-        //   `${currentUser.username} ${name}`
+            user_id: currentUser.id,
+            title: "test 1"
+            //   `${currentUser.username} ${name}`
         }
+
         console.log(wishlistObject)
+
         fetch("http://localhost:3000/wishlists",{
         method: "POST",
         headers: {
@@ -32,6 +34,25 @@ function PlaceCard({ place, currentUser, addNewWishlist }){
         .then(r => r.json())
         .then(newWishlist => addNewWishlist(newWishlist))
         //   history.push('/wishlist')
+
+
+        // const wishlistPlaceObject = {
+        //     place_id: id,
+        //     wishlist_id: id
+        // }
+
+        // console.log(wishlistPlaceObject)
+
+        // fetch("http://localhost:3000/wishlist_places", {
+        // method: "POST",
+        // headers: {
+        //     "Content-Type": "application/json"
+        // },
+        // body: JSON.stringify(wishlistPlaceObject)
+        // .then(r => r.json())
+        // .then(newWishlistPlace => addNewWishlistPlace(newWishlistPlace))
+        // })
+
     }
     return(
         <div className="card">
@@ -45,25 +66,27 @@ function PlaceCard({ place, currentUser, addNewWishlist }){
                 </figure>
             </div> 
 
-            <div class="card-content">
-                <div class="content">
+            <div className="card-content">
+                <div className="content">
                     <p>Categories:</p>
                     <ul> 
                         {placeCategoriesArr}
                     </ul>
                 </div>
-                <div class="content">
+                {/* <div className="content">
                     <p>Categories:</p>
                     <ul> 
                         {placeCategoriesArr}
                     </ul>
-                </div>
+                </div> */}
             </div>
             
 
             <button id={id} onClick={(e) => handleAddWishlistPlace(e.target.id)}>
                 Add to Wishlist!
             </button>
+
+            
             
         </div>
         

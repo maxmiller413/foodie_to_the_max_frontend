@@ -10,12 +10,15 @@ import WishlistPlaceCard from "./components/WishlistPlaceCard"
 import SignUp from "./components/SignUp"
 import Login from "./components/Login"
 import NavBar from "./components/NavBar"
+import WishlistForm from "./components/WishlistForm"
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [wishlists, setWishlists] = useState([])
+  const [wishlistPlaces, setWishlistPlaces] = useState([])
+  
 
   useEffect(() => {
     // const token = true
@@ -46,6 +49,11 @@ function App() {
     setWishlists(updatedWishlistArr)
   }
 
+  function handleAddWishlistPlace(newWishlistPlace){
+    const updatedWishlistPlaceArr = [...wishlistPlaces, newWishlistPlace]
+    console.log(updatedWishlistPlaceArr)
+  }
+
   return (
     <div className={isDarkMode ? "App" : "App-light"} >
       <NavBar 
@@ -65,7 +73,11 @@ function App() {
           <Login setCurrentUser={setCurrentUser} />
         </Route>
 
-        <Route exact path="/wishlist_places/:id">
+        <Route exact path="/wishlist_form">
+          <WishlistForm/>
+        </Route>
+
+        <Route exact path="/wishlist_places/:id/places">
           <WishlistPlaceCard/>
         </Route>
 
@@ -84,6 +96,7 @@ function App() {
               <HomePage 
                 currentUser={currentUser} 
                 addNewWishlist={handleNewWishlist}
+                addNewWishlistPlace={handleAddWishlistPlace}
               /> 
             </>
             ) : (
