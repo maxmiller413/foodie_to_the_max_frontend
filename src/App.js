@@ -5,12 +5,15 @@ import React, { useState, useEffect } from "react"
 import { Switch, Route } from "react-router-dom"
 import HomePage from "./components/HomePage"
 import WishlistsCollection from "./components/WishlistsCollection"
-import WishlistCard from "./components/WishlistCard"
+import WishlistDetails from "./components/WishlistDetails"
 import WishlistPlaceCard from "./components/WishlistPlaceCard"
 import SignUp from "./components/SignUp"
 import Login from "./components/Login"
 import NavBar from "./components/NavBar"
 import WishlistForm from "./components/WishlistForm"
+import WishlistCard from "./components/WishlistCard"
+import WishlistPlaceForm from "./components/WishlistPlaceForm"
+import { useHistory } from "react-router-dom"
 
 function App() {
 
@@ -18,8 +21,9 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [wishlists, setWishlists] = useState([])
   const [wishlistPlaces, setWishlistPlaces] = useState([])
+  const [placeId, setPlaceId] = useState([])
   
-
+console.log(placeId)
   useEffect(() => {
     // const token = true
     const userId = localStorage.getItem("userId")
@@ -40,6 +44,15 @@ function App() {
     } 
   }, [])
 
+  // useEffect(() => {
+  //   const userId = localStorage.getItem("userId")
+  //   if (userId){
+  //     fetch(`http://localhost:3000/users/${userId}`)
+  //     .then((r) => r.json())
+  //     .then((data) => setWishlistPlaces(data.wishlists))
+  //   } 
+  // }, [])
+
   function handleToggleDarkMode(){
     setIsDarkMode(isDarkMode => !isDarkMode)
   }
@@ -47,6 +60,8 @@ function App() {
   function handleNewWishlist(newWishlist){
     const updatedWishlistArr = [...wishlists, newWishlist]
     setWishlists(updatedWishlistArr)
+    // history.push("/wishlists/")
+    
   }
 
   function handleAddWishlistPlace(newWishlistPlace){
@@ -54,6 +69,9 @@ function App() {
     console.log(updatedWishlistPlaceArr)
   }
 
+  function onHandlePlaceId(newPlace){
+    setPlaceId(newPlace)
+  }
   return (
     <div className={isDarkMode ? "App" : "App-light"} >
       <NavBar 
@@ -73,20 +91,24 @@ function App() {
           <Login setCurrentUser={setCurrentUser} />
         </Route>
 
-        <Route exact path="/wishlist_form">
-          <WishlistForm/>
+        <Route exact path="/wishlist/new">
+          <WishlistForm currentUser={currentUser} onAddWishlist={handleNewWishlist}/>
+        </Route>
+
+        <Route exact path="/wishlist_place/new">
+          <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} />
         </Route>
 
         <Route exact path="/wishlist_places/:id/places">
           <WishlistPlaceCard/>
         </Route>
 
-        <Route exact path="/wishlists/:id">
-          <WishlistCard/>
+        <Route exact path="/wishlists/:id" >
+          <WishlistCard wishlistPlaces={wishlistPlaces} setWishlistPlaces={setWishlistPlaces}/>
         </Route>
 
         <Route exact path="/wishlists">
-          <WishlistsCollection wishlists={wishlists}/>
+          <WishlistsCollection wishlists={wishlists} currentUser={currentUser}/>
         </Route>
 
         <Route exact path="/">
@@ -97,11 +119,15 @@ function App() {
                 currentUser={currentUser} 
                 addNewWishlist={handleNewWishlist}
                 addNewWishlistPlace={handleAddWishlistPlace}
+                onSetPlaceId={onHandlePlaceId}
               /> 
             </>
             ) : (
               <h1 className="subtitle"> Please Login or SignUp </h1>
           )}
+        </Route>
+        <Route path ="*">
+          <h1> 404 not found </h1>
         </Route>
       </Switch>
     </div>

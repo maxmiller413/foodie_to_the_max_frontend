@@ -3,7 +3,7 @@ import Search from "./Search"
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 
-function HomePage({currentUser, addNewWishlist, addNewWishlistPlace}){
+function HomePage({currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceId}){
 
     const [places, setPlaces] = useState([])
 
@@ -21,6 +21,7 @@ function HomePage({currentUser, addNewWishlist, addNewWishlistPlace}){
                             className="tile is-parent"
                             addNewWishlist={addNewWishlist}
                             addNewWishlistPlace={addNewWishlistPlace}
+                            onSetPlaceId={onSetPlaceId}
                         />
                     </div>
                     <div>

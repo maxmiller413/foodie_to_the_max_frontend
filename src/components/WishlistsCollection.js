@@ -1,5 +1,5 @@
 import React from "react"
-import WishlistCard from "./WishlistCard"
+import WishlistCard from "./WishlistDetails"
 // import './WishlistsCollection.module.css';
 
 function WishlistsCollection({ wishlists }){
@@ -10,7 +10,11 @@ function WishlistsCollection({ wishlists }){
             // currentUser={currentUser}
             // addNewWishlist={addNewWishlist}
         />
+
     ))
+
+    console.log(wishlists)
+
     return(
         <div>
             <div className="columns">

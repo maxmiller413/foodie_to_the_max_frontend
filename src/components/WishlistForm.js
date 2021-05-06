@@ -1,21 +1,42 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 
-function WishlistForm(){
 
-    const [formInput, setFormInput] = useState([])
+function WishlistForm({ currentUser, onAddWishlist }){
 
-    
+    const [titleFormInput, setTitleFormInput] = useState([])
+    console.log(currentUser)
+    const {id, username, wishlist} = currentUser
+
+    function handleWishlistFormSubmit(e){
+      e.preventDefault()
+      const formObj = {
+        title: titleFormInput,
+        user_id: currentUser.id
+      }
+      console.log(formObj)
+      fetch('http://localhost:3000/wishlists', {
+        method: "POST",
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(formObj)
+      })
+        .then (r => r.json())
+        .then(newWishList => onAddWishlist(newWishList))
+        // history.push("/wishlists/")
+
+    }
 
     return(
         <div>
-          <form >
+          <form onSubmit={handleWishlistFormSubmit}>
             <h1 > Add a Wishlist </h1>
             <label > Wishlist Name </label>
             <input
               type="text"
-              value={formInput}
-              onChange={e => setFormInput(e.target.value)}
+              value={titleFormInput}
+              onChange={e => setTitleFormInput(e.target.value)}
             />
     
             {/* {errors.map((error) => (

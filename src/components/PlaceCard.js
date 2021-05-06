@@ -1,38 +1,71 @@
 import React from "react"
+import { useHistory } from "react-router-dom";
 
-function PlaceCard({ place, currentUser, addNewWishlist, addNewWishlistPlace }){
-    console.log(place.categories)
-
-    const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url} = place
-
+function PlaceCard({ place, currentUser, onSetPlaceId }){
     console.log(place)
+
+    const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state} = place
+
+    const history = useHistory();
 
     const placeCategoriesArr = place.categories.map((category, index) => (
         <li key={index}> 
             {category.title} 
         </li>
     ))
+    
+    function handleOnClick(){
+        const newPlace = {
+            name: name,
+            phone: display_phone,
+            street_address: location.address1,
+            city: location.city,
+            state: location.state,
+            zip: location.zip_code,
+            image_url: image_url,
+            url: url,
+            rating: rating,
+            review_count: review_count,
+            categories: categories,
+            price: price
+        }
+        fetch("http://localhost:3000/places",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newPlace)
+            })
+            .then(r => r.json())
+            .then(newPlace => {
+                onSetPlaceId(newPlace)
+                history.push('/wishlist_place/new')
+            })
 
-    const handleAddWishlistPlace = (id) => {
+
+        
+              
+    }
+    // const handleAddWishlistPlace = (id) => {
         // history.push('/wishlist')
         
-        const wishlistObject = {
-            user_id: currentUser.id,
-            title: "test 1"
-            //   `${currentUser.username} ${name}`
-        }
+        // const wishlistObject = {
+        //     user_id: currentUser.id,
+        //     title: "test 1"
+        //     //   `${currentUser.username} ${name}`
+        // }
 
-        console.log(wishlistObject)
+        // console.log(wishlistObject)
 
-        fetch("http://localhost:3000/wishlists",{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(wishlistObject)
-        })
-        .then(r => r.json())
-        .then(newWishlist => addNewWishlist(newWishlist))
+        // fetch("http://localhost:3000/wishlists",{
+        // method: "POST",
+        // headers: {
+        //     "Content-Type": "application/json"
+        // },
+        // body: JSON.stringify(wishlistObject)
+        // })
+        // .then(r => r.json())
+        // .then(newWishlist => addNewWishlist(newWishlist))
         //   history.push('/wishlist')
 
 
@@ -53,7 +86,7 @@ function PlaceCard({ place, currentUser, addNewWishlist, addNewWishlistPlace }){
         // .then(newWishlistPlace => addNewWishlistPlace(newWishlistPlace))
         // })
 
-    }
+    // }
     return(
         <div className="card">
             <header className="card-header"> 
@@ -82,7 +115,7 @@ function PlaceCard({ place, currentUser, addNewWishlist, addNewWishlistPlace }){
             </div>
             
 
-            <button id={id} onClick={(e) => handleAddWishlistPlace(e.target.id)}>
+            <button id={id} onClick={handleOnClick}>
                 Add to Wishlist!
             </button>
 
