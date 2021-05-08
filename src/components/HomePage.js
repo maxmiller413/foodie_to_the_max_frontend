@@ -8,28 +8,40 @@ function HomePage({currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceI
     const [places, setPlaces] = useState([])
 
     return(
-        <section className="section">
-            <div className="tile is-ancestor">
-                <div className="title is-vertical is-8">
-                    <header>
-                        <Search setPlaces={setPlaces} className="tile is-parent"/>
-                    </header>
-                    <div>
+        <>
+        <section className="section notification">
+            <div className="container notification is-success">
+                <div className="columns notification is-info">
+                    <div className="column notification">
+                        <header className="column notification is-danger">
+                            <Search setPlaces={setPlaces} />
+                        </header>
+                    </div>
+                    
+                    
+                </div>
+                <div className="columns notification">
+                    <div className="column notification is-danger is-2">
+                        <Filter />
+                    </div>
+                    <div className="column notification is-success">
                         <PlacesCollection 
                             places={places} 
                             currentUser={currentUser} 
-                            className="tile is-parent"
+                            
                             addNewWishlist={addNewWishlist}
                             addNewWishlistPlace={addNewWishlistPlace}
                             onSetPlaceId={onSetPlaceId}
                         />
                     </div>
-                    <div>
-                        <Filter className="tile is-parent"/>
-                    </div>
                 </div>
             </div>
         </section>
+
+        </>
+        
+        
+        
     )
 }
 

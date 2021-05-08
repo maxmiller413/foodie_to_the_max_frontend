@@ -93,7 +93,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                 <p className="card-header-title"> {name} </p>
             </header>
                 
-            <div className="card-image">
+            <div className="card-image ">
                 <figure className="image is-4by3">
                     <img src={image_url} alt={name}/>
                 </figure>
