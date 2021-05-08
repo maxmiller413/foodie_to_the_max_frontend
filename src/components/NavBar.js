@@ -3,6 +3,7 @@ import React from "react"
 import { Link } from "react-router-dom";
 import DarkMode from './DarkMode'
 
+
 function NavBar({ 
     title,
     isDarkMode,
@@ -14,7 +15,6 @@ function NavBar({
 function handleLogout(){
     const userId = localStorage.setItem("userId", null)
     setCurrentUser(userId)
-    
 }
 
 return (
@@ -60,7 +60,7 @@ return (
                         <Link to="/wishlists" className="nav-item" > Wishlists </Link>
                         <Link to="/wishlist/new" className="nav-item" > New Wishlist </Link>
                         <Link to="/wishlist_place/new" className="nav-item" > New Wishlist Place </Link>
-                        <Link to="/logout" className="nav-item" onClick={handleLogout} > Logout </Link>
+                        <Link to="/" className="nav-item" onClick={handleLogout} > Logout </Link>
                     </>
                         ) : (
                     <>
