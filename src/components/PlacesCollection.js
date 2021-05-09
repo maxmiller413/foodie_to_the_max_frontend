@@ -15,9 +15,9 @@ function PlacesCollection({ places, currentUser, addNewWishlist, addNewWishlistP
         />
     ))
     return(      
-        <div>
+        <>
             {placesArr} 
-        </div>
+        </>
         
         
     )

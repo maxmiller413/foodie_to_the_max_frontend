@@ -88,42 +88,47 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
 
     // }
     return(
-        <div className="card">
-            <header className="card-header"> 
-                <p className="card-header-title"> {name} </p>
+        <div className="card block notification">
+            <header className="card-header columns title is-vcentered"> 
+                <p className="card-header-title column-gap is-centered"> 
+                    {name} 
+                </p>
+                <button id={id} onClick={handleOnClick} className=" button is-small is-rounded is-success column-gap has-text-weight-bold">
+                    Add to Wishlist!
+                </button>
+                <div className="column is-narrow"></div>
             </header>
-                
-            <div className="card-image ">
-                <figure className="image is-4by3">
-                    <img src={image_url} alt={name}/>
-                </figure>
-            </div> 
+            
+            <div className="columns">
+                <div className="column is-6 card-image">
+                    <figure className="image ">
+                        <img src={image_url} alt={name}/>
+                    </figure>
+                </div> 
 
-            <div className="card-content">
-                <div className="content">
-                    <p>Categories:</p>
-                    <ul> 
-                        {placeCategoriesArr}
-                    </ul>
+                <div className="column card-content is-centered">
+                    <div className="content">
+                        <p className="subtitle">Categories:</p>
+                        <ul> 
+                            {placeCategoriesArr}
+                        </ul>
+                    </div>
                 </div>
-                {/* <div className="content">
-                    <p>Categories:</p>
-                    <ul> 
-                        {placeCategoriesArr}
-                    </ul>
-                </div> */}
+
+                <div className="column card-content">
+                    <div className="content">
+                        <p className="subtitle">Address:</p>
+                        <div>{location.address1}</div>
+                        <div>{location.city}, {location.state}</div><br></br>
+
+                        <p className="subtitle">Phone:</p>
+                        <div>{display_phone}</div>
+            
+                    </div>
+                </div>
             </div>
-            
-
-            <button id={id} onClick={handleOnClick}>
-                Add to Wishlist!
-            </button>
-
-            
-            
         </div>
-        
     )
 }
-
+// const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state} = place
 export default PlaceCard
