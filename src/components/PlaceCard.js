@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 function PlaceCard({ place, currentUser, onSetPlaceId }){
     console.log(place)
 
-    const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state} = place
+    const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state, is_closed} = place
 
     const history = useHistory();
 
@@ -12,6 +12,12 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
         <li key={index}> 
             {category.title} 
         </li>
+    ))
+
+    const placeTransactionOptions = place.transactions.map((transaction, index) => (
+        <span key={index} className="tag"> 
+            {transaction}
+        </span>
     ))
     
     function handleOnClick(){
@@ -108,9 +114,41 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
 
                 <div className="column card-content is-centered">
                     <div className="content">
-                        <p className="subtitle">Categories:</p>
+
+                        <p> Rating: </p>
+                        <span className="icon">
+                            {/* <i 
+                                emptySymbol="far fa-star"
+                                fullSymbol="fas fa-star"
+                                initialRating={rating} 
+                                readonly
+                                
+                            >
+                            </i> */}
+                            
+                            <i className="fas fa-star"> </i>
+                            <i className="fas fa-star"> </i>
+                        </span>
+                        
+                        
+                        <div className="tags">
+                            <span className="tag"> {price} </span>
+                            {placeTransactionOptions}
+                        </div>
+
+
+                        <p >Categories:</p>
                         <ul> 
                             {placeCategoriesArr}
+                        </ul>
+                        
+                        <p> Review Count: {review_count} </p>
+                        Restaurant Website: <a href={url}> {name}</a>
+                        {/* <p> Open Now: ({is_closed} ? Closed : Open) </p> */}
+                        <p>Open Now: {!is_closed ? ( "Closed" ) : ( "Open" )}</p>
+                        <p> Price: {price} </p>
+                        <ul>
+                            {placeTransactionOptions}
                         </ul>
                     </div>
                 </div>
@@ -119,7 +157,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                     <div className="content">
                         <p className="subtitle">Address:</p>
                         <div>{location.address1}</div>
-                        <div>{location.city}, {location.state}</div><br></br>
+                        <div>{location.city}, {location.state} {location.zip_code}</div><br></br>
 
                         <p className="subtitle">Phone:</p>
                         <div>{display_phone}</div>
