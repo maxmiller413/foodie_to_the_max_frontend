@@ -66,7 +66,7 @@ console.log(placeId)
 
   function handleAddWishlistPlace(newWishlistPlace){
     const updatedWishlistPlaceArr = [...wishlistPlaces, newWishlistPlace]
-    console.log(updatedWishlistPlaceArr)
+    setWishlistPlaces(updatedWishlistPlaceArr)
   }
 
   function onHandlePlaceId(newPlace){
@@ -96,7 +96,7 @@ console.log(placeId)
         </Route>
 
         <Route exact path="/wishlist_place/new">
-          <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} />
+          <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} handleAddWishlistPlace={handleAddWishlistPlace} />
         </Route>
 
         <Route exact path="/wishlist_places/:id/places">

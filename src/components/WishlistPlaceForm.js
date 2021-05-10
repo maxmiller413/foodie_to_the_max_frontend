@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
 
-function WishlistPlaceForm({wishlists, placeId, setPlaceId}){
+function WishlistPlaceForm({wishlists, placeId, setPlaceId, handleAddWishlistPlace }){
     
     const [wishlistTitle, setWishlistTitle] = useState("")
+    const history = useHistory()
     
     
     // let obj = {
@@ -34,9 +36,15 @@ function WishlistPlaceForm({wishlists, placeId, setPlaceId}){
             body: JSON.stringify(wishlistPlaceObj)
         })
             .then(r => r.json())
-            .then(data => console.log(data))
+            .then(newWishlistPlace => {
+                handleAddWishlistPlace(newWishlistPlace)
+                history.push(`/wishlists/${newWishlistPlace.wishlist.id}`)
+            })
+            
+            console.log()
+            
     }
-    console.log(wishlistPlaceObj)
+    console.log()
     return(
         
         <div>
@@ -46,6 +54,7 @@ function WishlistPlaceForm({wishlists, placeId, setPlaceId}){
                 <label > Choose a Place </label>
                 <input
                 type="text"
+                placeholder="1"
                 // value={placeId}
                 // onChange={e => setPlaceId(e.target.value)}
                 />

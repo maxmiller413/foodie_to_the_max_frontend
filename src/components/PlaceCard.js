@@ -1,5 +1,6 @@
 import React from "react"
 import { useHistory } from "react-router-dom";
+import ReactStars from "react-rating-stars-component"
 
 function PlaceCard({ place, currentUser, onSetPlaceId }){
     console.log(place)
@@ -114,21 +115,21 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
 
                 <div className="column card-content is-centered">
                     <div className="content">
-
                         <p> Rating: </p>
-                        <span className="icon">
-                            {/* <i 
-                                emptySymbol="far fa-star"
-                                fullSymbol="fas fa-star"
-                                initialRating={rating} 
-                                readonly
-                                
-                            >
-                            </i> */}
-                            
-                            <i className="fas fa-star"> </i>
-                            <i className="fas fa-star"> </i>
-                        </span>
+                        <div className="columns">
+                            <ReactStars
+                                count={5}
+                                size={24}
+                                isHalf={true}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fa fa-star"></i>}
+                                activeColor="#ffd700"
+                                value={rating}
+                                className="column"
+                                edit={false}
+                            />
+                        </div>
                         
                         
                         <div className="tags">

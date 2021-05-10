@@ -7,6 +7,7 @@ function WishlistForm({ currentUser, onAddWishlist }){
     const [titleFormInput, setTitleFormInput] = useState([])
     console.log(currentUser)
     const {id, username, wishlist} = currentUser
+    const history = useHistory()
 
     function handleWishlistFormSubmit(e){
       e.preventDefault()
@@ -24,7 +25,7 @@ function WishlistForm({ currentUser, onAddWishlist }){
       })
         .then (r => r.json())
         .then(newWishList => onAddWishlist(newWishList))
-        // history.push("/wishlists/")
+        history.push("/wishlists/")
 
     }
 
