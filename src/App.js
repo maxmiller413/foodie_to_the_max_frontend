@@ -73,64 +73,70 @@ console.log(placeId)
     setPlaceId(newPlace)
   }
   return (
-    <div className={isDarkMode ? "App" : "App-light"} >
-      <NavBar 
-        title="foodie_to_the_max"
-        isDarkMode={isDarkMode}
-        onToggleDarkMode={handleToggleDarkMode}
-        currentUser={currentUser}
-        setCurrentUser={setCurrentUser}
-        // setWishlists={setWishlists}
-      />
-      <Switch>
-        <Route exact path="/signup">
-          <SignUp setCurrentUser={setCurrentUser} />
-        </Route>
+    <> <NavBar 
+          title="foodie_to_the_max"
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={handleToggleDarkMode}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+          // setWishlists={setWishlists}
+        />
+    <section className="section hero is-danger is-fullheight" >
+     
+        <div className="container">
+        
+        <Switch>
+          <Route exact path="/signup">
+            <SignUp setCurrentUser={setCurrentUser} />
+          </Route>
 
-        <Route exact path="/login">
-          <Login setCurrentUser={setCurrentUser} />
-        </Route>
+          <Route exact path="/login">
+            <Login setCurrentUser={setCurrentUser} />
+          </Route>
 
-        <Route exact path="/wishlist/new">
-          <WishlistForm currentUser={currentUser} onAddWishlist={handleNewWishlist}/>
-        </Route>
+          <Route exact path="/wishlist/new">
+            <WishlistForm currentUser={currentUser} onAddWishlist={handleNewWishlist}/>
+          </Route>
 
-        <Route exact path="/wishlist_place/new">
-          <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} handleAddWishlistPlace={handleAddWishlistPlace} />
-        </Route>
+          <Route exact path="/wishlist_place/new">
+            <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} handleAddWishlistPlace={handleAddWishlistPlace} />
+          </Route>
 
-        <Route exact path="/wishlist_places/:id/places">
-          <WishlistPlaceCard/>
-        </Route>
+          <Route exact path="/wishlist_places/:id/places">
+            <WishlistPlaceCard/>
+          </Route>
 
-        <Route exact path="/wishlists/:id" >
-          <WishlistCard wishlistPlaces={wishlistPlaces} setWishlistPlaces={setWishlistPlaces}/>
-        </Route>
+          <Route exact path="/wishlists/:id" >
+            <WishlistCard wishlistPlaces={wishlistPlaces} setWishlistPlaces={setWishlistPlaces}/>
+          </Route>
 
-        <Route exact path="/wishlists">
-          <WishlistsCollection wishlists={wishlists} currentUser={currentUser}/>
-        </Route>
+          <Route exact path="/wishlists">
+            <WishlistsCollection wishlists={wishlists} currentUser={currentUser}/>
+          </Route>
 
-        <Route exact path="/">
-          {currentUser ? (
-            <> 
-              <h1 className="subtitle"> Welcome, {currentUser.username} </h1>
-              <HomePage 
-                currentUser={currentUser} 
-                addNewWishlist={handleNewWishlist}
-                addNewWishlistPlace={handleAddWishlistPlace}
-                onSetPlaceId={onHandlePlaceId}
-              /> 
-            </>
-            ) : (
-              <h1 className="subtitle"> Please Login or SignUp </h1>
-          )}
-        </Route>
-        <Route path ="*">
-          <h1> 404 not found </h1>
-        </Route>
-      </Switch>
-    </div>
+          <Route exact path="/">
+            {currentUser ? (
+              <> 
+                {/* <h1 className="subtitle"> Welcome, {currentUser.username} </h1> */}
+                <HomePage 
+                  currentUser={currentUser} 
+                  addNewWishlist={handleNewWishlist}
+                  addNewWishlistPlace={handleAddWishlistPlace}
+                  onSetPlaceId={onHandlePlaceId}
+                /> 
+              </>
+              ) : (
+                <h1 className="title"> Please Login or SignUp </h1>
+            )}
+          </Route>
+          <Route path ="*">
+            <h1> 404 not found </h1>
+          </Route>
+        </Switch>
+      </div>
+      
+    </section>
+    </>
   )
 }
 

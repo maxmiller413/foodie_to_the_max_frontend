@@ -18,12 +18,14 @@ function WishlistCard({ wishlistPlaces, currentUser, setWishlistPlaces }){
         <li key={place.id}>  {place.name} </li>
     ))
      return(
-         <div>
-            <h1> Wishlist Places </h1>
-            <ul>
-                {wishlistPlacesArr}
-            </ul> 
-         </div>
+         <section className="section">
+             <div className="container">
+                <header> Wishlist Places </header>
+                <ul>
+                    {wishlistPlacesArr}
+                </ul>
+            </div>
+         </section>
         
        
 

@@ -2,6 +2,7 @@ import '../index.css';
 import React from "react"
 import { Link } from "react-router-dom";
 import DarkMode from './DarkMode'
+import innerFoodie from '../photos/innerFoodie.jpg'
 
 
 function NavBar({ 
@@ -12,10 +13,10 @@ function NavBar({
     setCurrentUser
 }) {
 
-function handleLogout(){
-    const userId = localStorage.setItem("userId", null)
-    setCurrentUser(userId)
-}
+    function handleLogout(){
+        const userId = localStorage.setItem("userId", null)
+        setCurrentUser(userId)
+    }
 
 return (
     // <header> 
@@ -43,29 +44,41 @@ return (
     //             {isDarkMode ? "Dark" : "Light"} Mode
     //     </button>
     // </header>
-    <div className="block">
-        <nav className="nav">
-
-            <div className="nav-left">
-                <a href="" className="nav-item">
-                    <h1 className="title is-4"> Foodie-to-the-Max </h1>
+    // <div className="block">
+    <div className="section hero is-danger" >
+        <nav className="navbar">
+        
+            <div className="navbar-brand">
+                
+            <a href="/">
+                <figure className="image is-128x128">
+                    <img src={innerFoodie} ></img>
+                </figure>
+            </a>     
+                
+                <a href="/" className="navbar-item">
+                    <header className="title is-4">  
+                        
+                        Inner Foodie 
+                    </header>
                 </a>
+
             </div>
 
-            <div className="nav-right nav-menu is-active">
-                <Link to="/" className="nav-item"> Home </Link>
+            <div className="navbar-end">
+                <Link to="/" className="navbar-item"> Home </Link>
                 
                 {currentUser ? (
                     <>
-                        <a href="/wishlists" className="nav-item" > Wishlists </a>
-                        <Link to="/wishlist/new" className="nav-item" > New Wishlist </Link>
-                        {/* <Link to="/wishlist_place/new" className="nav-item" > New Wishlist Place </Link> */}
-                        <Link to="/" className="nav-item" onClick={handleLogout} > Logout </Link>
+                        <a href="/wishlists" className="navbar-item" > Wishlists </a>
+                        <Link to="/wishlist/new" className="navbar-item" > New Wishlist </Link>
+                        {/* <Link to="/wishlist_place/new" className="navbar-item" > New Wishlist Place </Link> */}
+                        <Link to="/" className="navbar-item" onClick={handleLogout} > Logout </Link>
                     </>
                         ) : (
                     <>
-                        <Link to="/login" className="nav-item"> Login </Link>
-                        <Link to="/signup" className="nav-item"> Signup </Link>
+                        <Link to="/login" className="navbar-item "> Login </Link>
+                        <Link to="/signup" className="navbar-item"> Signup </Link>
                     </>
                 )}
                 
@@ -73,6 +86,7 @@ return (
 
         </nav>
     </div>
+    // </div>
 )}
 
 export default NavBar

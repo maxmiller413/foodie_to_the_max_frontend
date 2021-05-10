@@ -16,17 +16,19 @@ function WishlistsCollection({ wishlists }){
     console.log(wishlists)
 
     return(
-        <div>
-            <div className="columns">
-                <div className="column"> </div>
-                <div className="search-results"> 
-                    <p className="notification">Wishlists:</p>
-                    <ul className="notification">
-                        {wishlistsArr}
-                    </ul>
+        <section className="section">
+            <div className="container">
+                <div className="columns">
+                <div className="column"> 
+                    <div className="search-results"> 
+                        <header className="notification is-success is-align-items-center">Wishlists</header>
+                        <ul className="notification">
+                            {wishlistsArr}
+                        </ul>
+                    </div>
                 </div>
 
-                <div className="column"> </div>
+                
 
             </div>
 
@@ -34,7 +36,9 @@ function WishlistsCollection({ wishlists }){
             <ul>
                 {wishlistsArr}
             </ul> */}
-        </div>
+            </div>
+            
+        </section>
         
     )
 }

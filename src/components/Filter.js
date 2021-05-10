@@ -2,7 +2,9 @@ import React from "react"
 
 function Filter(){
     return(
-        <h1> Filter </h1>
+        <div className="container"> 
+            <h1 className="has-text-centered"> Filter Options </h1> 
+        </div>
     )
 }
 

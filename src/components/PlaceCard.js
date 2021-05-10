@@ -95,7 +95,32 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
 
     // }
     return(
+<>
+{/* <div className="modal is-active">
+  <div className="modal-background"></div>
+
+  <div className="modal-card">
+
+    <header className="modal-card-head">
+      <p className="modal-card-title">Modal title</p>
+      <button className="delete" aria-label="close"></button>
+    </header>
+
+    <section className="modal-card-body">
+      
+    </section>
+
+    <footer className="modal-card-foot">
+      <button className="button is-success">Save changes</button>
+      <button className="button is-clipped">Cancel</button>
+    </footer>
+
+  </div>
+</div> */}
+
+
         <div className="card block notification">
+            
             <header className="card-header columns title is-vcentered"> 
                 <p className="card-header-title column-gap is-centered"> 
                     {name} 
@@ -103,6 +128,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                 <button id={id} onClick={handleOnClick} className=" button is-small is-rounded is-success column-gap has-text-weight-bold">
                     Add to Wishlist!
                 </button>
+                
                 <div className="column is-narrow"></div>
             </header>
             
@@ -113,7 +139,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                     </figure>
                 </div> 
 
-                <div className="column card-content is-centered">
+                <div className="column card-content">
                     <div className="content">
                         <p> Rating: </p>
                         <div className="columns">
@@ -156,8 +182,8 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
 
                 <div className="column card-content">
                     <div className="content">
-                        <p className="subtitle">Address:</p>
-                        <div>{location.address1}</div>
+                        
+                        <div className="margin-right">{location.address1}</div>
                         <div>{location.city}, {location.state} {location.zip_code}</div><br></br>
 
                         <p className="subtitle">Phone:</p>
@@ -167,6 +193,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                 </div>
             </div>
         </div>
+        </>
     )
 }
 // const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state} = place

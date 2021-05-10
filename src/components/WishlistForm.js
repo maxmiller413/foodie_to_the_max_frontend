@@ -32,7 +32,7 @@ function WishlistForm({ currentUser, onAddWishlist }){
     return(
         <div>
           <form onSubmit={handleWishlistFormSubmit}>
-            <h1 > Add a Wishlist </h1>
+            {/* <h1 > Add a Wishlist </h1> */}
             <label > Wishlist Name </label>
             <input
               type="text"

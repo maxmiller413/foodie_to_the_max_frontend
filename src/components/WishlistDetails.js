@@ -24,16 +24,16 @@ function WishlistDetails({ wishlist }){
     
     return(
         <div className="card">
-            <header className="card-header"> 
-                <p className="card-header-title"> 
-                    
-                    <Link to={`/wishlists/${wishlist.id}`} > {wishlist.title} </Link> 
-                    <button id={wishlist.id} onClick={handleClick}>
-                        See "{wishlist.title}" spots
-                    </button>
+            <header className="card-header"></header>
+            <p className="card-header-title"> 
+                
+                <Link to={`/wishlists/${wishlist.id}`} > {wishlist.title} </Link> 
+                {/* <button id={wishlist.id} onClick={handleClick}>
+                    See "{wishlist.title}" spots
+                </button> */}
 
-                </p>
-            </header>
+            </p>
+            
         </div>
 
     )
