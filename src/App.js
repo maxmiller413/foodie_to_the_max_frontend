@@ -25,6 +25,9 @@ function App() {
   const [wishlistPlaces, setWishlistPlaces] = useState([])
   const [placeId, setPlaceId] = useState([])
   const [places, setPlaces] = useState([])
+  const [showRes, setShowRes] = useState(true);
+  const [sortBy, setSortBy] = useState("All");
+  const [rating, setRating] = useState("All")
   
   
 console.log(placeId)
@@ -76,6 +79,31 @@ console.log(placeId)
   function onHandlePlaceId(newPlace){
     setPlaceId(newPlace)
   }
+
+  const resPlacesArr = places
+    .filter((place) => {
+       return (sortBy === "All" || place.price === sortBy)
+    })
+    .filter((place) => {
+      return (place.is_closed !== showRes)
+   })
+   .filter((place) => {
+    return (rating === "All" || place.rating >= rating)
+ })
+   
+  //   .filter(car => {
+  //     return type === "All" || car.vehicle_type === type
+  // })
+    // .filter((place) => place.open_now !== showRes)
+  // .sort((place1, place2) => {
+  //   if (sortBy === "price") {
+  //     return place1.price - place2.price;
+  //   } else {
+  //     return place1.name.localeCompare(place2.name);
+  //   }
+  
+  
+
   return (
     // <div style={{ width: "100%", height: "100%" }}>
     //   <div className={styles.Hero}>
@@ -136,8 +164,14 @@ console.log(placeId)
                   addNewWishlist={handleNewWishlist}
                   addNewWishlistPlace={handleAddWishlistPlace}
                   onSetPlaceId={onHandlePlaceId}
-                  places={places}
+                  places={resPlacesArr}
                   // setPlaces={setPlaces}
+                  showRes={showRes}
+                  setShowRes={setShowRes}
+                  sortBy={sortBy}
+                  setSortBy={setSortBy}
+                  rating={rating}
+                  setRating={setRating}
                 /> 
               </>
               ) : (

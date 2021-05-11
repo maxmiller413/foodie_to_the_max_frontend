@@ -1,9 +1,73 @@
 import React from "react"
 
-function Filter(){
+function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating }){
+
+    function handleChangeSortBy(e){
+        setSortBy(e.target.value)
+    }
+
+    function handleToggleRes(e){
+        setShowRes(e.target.checked)
+    }
+
+    function handleChangeRating(e){
+        setRating(e.target.value)
+    }
     return(
         <div className="container"> 
-            <h1 className="has-text-centered"> Filter Options </h1> 
+            <div className="filterWrapper">
+
+			<div className="ui menu">
+
+				<div className="ui item">
+					<label>Sort by $ </label>
+				</div>
+				<div className="ui item">
+					<select
+						className="ui selection dropdown"
+						name="sort"
+						onChange={handleChangeSortBy}
+						value={sortBy}
+                    >
+						<option value="All">All</option>
+						<option value="$">$</option>
+                        <option value="$$">$$</option>
+                        <option value="$$$">$$$</option>
+					</select>
+				</div>
+
+                <div className="ui item">
+					<label>Sort by Rating</label>
+				</div>
+				<div className="ui item">
+					<select
+						className="ui selection dropdown"
+						name="sort"
+						onChange={handleChangeRating}
+						value={rating}
+                    >
+						<option value="All">All</option>
+						<option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+					</select>
+				</div>
+
+				<div className="ui item">
+					<label>Open Now?</label>
+				</div>
+				<div className="ui item">
+					<input
+						className="ui toggle checkbox"
+						checked={showRes}
+						onChange={handleToggleRes}
+						type="checkbox"
+					/>
+				</div>
+			</div>
+		</div>
         </div>
     )
 }
