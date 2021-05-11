@@ -137,12 +137,12 @@ console.log(placeId)
                   addNewWishlistPlace={handleAddWishlistPlace}
                   onSetPlaceId={onHandlePlaceId}
                   places={places}
+                  // setPlaces={setPlaces}
                 /> 
               </>
               ) : (
               <>
-              <Login />
-              <SignUp />
+              
               </>
               
             )}

@@ -32,31 +32,40 @@ function Search({ setPlaces }){
         .then(response => response.json())
         .then(placesArr => setPlaces(placesArr.businesses))
         // .catch(error => console.log('error', error));
+       
     }
 
     return(
-        <div className="columns is-centered">
+        <div className="columns is-centered ">
             
-            <form onSubmit={onhandleSubmit}>
+            <form onSubmit={onhandleSubmit} className="field">
                 <label> Term </label>
-                <input 
-                type="text"
-                id="term"
-                name="restaurant"
-                placeholder="Search by cuisine!"
-                value={term}
-                onChange={e => setTerm(e.target.value)}
-                />
+                <div className="control is-medium">
+                    <input 
+                    type="text"
+                    id="term"
+                    name="restaurant"
+                    placeholder="Search by cuisine!"
+                    value={term}
+                    onChange={e => setTerm(e.target.value)}
+                    className="input is-medium"
+                    />
+                </div>
+
+                
 
             <label> Location </label>
-                <input 
-                type="text"
-                id="location"
-                name="location"
-                placeholder="Search by address or city!"
-                value={location}
-                onChange={e => setLocation(e.target.value)}
-                />
+                <div className="control is-medium">
+                    <input 
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Search by address or city!"
+                    value={location}
+                    onChange={e => setLocation(e.target.value)}
+                    className="input is-medium"
+                    />
+                </div>
                 <button type="submit">Search</button>
             </form>
         </div>

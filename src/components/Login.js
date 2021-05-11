@@ -56,7 +56,7 @@ function Login ({ setCurrentUser }) {
     return (
         <div>
           <form onSubmit={handleSubmit} >
-            {/* <h1 > Login</h1> */}
+            <h1 > Login</h1>
             <label > Username</label>
             <input
               type="text"

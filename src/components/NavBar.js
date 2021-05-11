@@ -7,8 +7,6 @@ import innerFoodie from '../photos/innerFoodie.jpg'
 import Search from "./Search"
 import orig from '../photos/orig.jpg'
 import styles from "./NavBar.module.css"
-import Login from "./Login"
-import SignUp from "./SignUp"
 
 
 function NavBar({ 
@@ -18,6 +16,7 @@ function NavBar({
     currentUser,
     setCurrentUser,
     setPlaces
+    
 }) {
 
     // const [places, setPlaces] = useState([])
@@ -128,15 +127,7 @@ return (
 <section className="hero is-large" className={styles.Hero} > 
     <div className="hero-body" > 
         <div className="container has-text-centered"> 
-        {currentUser ? (
-                        <>
-                            <Search setPlaces={setPlaces}/>
-                        </>
-                            ) : (
-                        <>
-                            <Login />
-                        </>
-                    )}
+           <Search setPlaces={setPlaces}/>
 
         </div> 
     </div>
