@@ -1,35 +1,54 @@
 import React, { useState } from "react"
-import Search from "./Search"
+// import React from "react"
+// import Search from "./Search"
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 
-function HomePage({currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceId}){
 
-    const [places, setPlaces] = useState([])
+function HomePage({currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceId, places}){
+
+    // const [places, setPlaces] = useState([])
 
     return(
         
         // <section className="section notification">
-            <div className="container notification is-success">
+        <div>
+            {/* <div className="container notification is-success"> */}
 
-                <div className="columns notification is-info">
+                {/* <div className="columns notification is-info">
                         <header className="column notification is-danger">
                             <Search setPlaces={setPlaces} />
                         </header>
-                </div>
+                </div> */}
+        
+
+        <section className="section">
+        <div className="container">
+        {/* <div className="hero is-fullheight has-background ">
+                  <img src={hero} className="hero-body">
+
+                    </img> */}
+                  {/* <Search setPlaces={setPlaces} /> */}
+        
             
-                <div className="columns notification"> 
-                    <div className="column">
+        </div>
+        </section>
+
+
+            <div>
+                <div>
+                {/* <div className="columns notification"> 
+                    <div className="column"> */}
                         
-                        <div className="columns">   
-                            <header className="column notification is-danger">
+                        <div >   
+                            <header >
                                 <Filter />
                             </header>
                             
                         </div>
 
-                        <div className="columns"> 
-                            <div className="column notification is-success">
+                        <div > 
+                            <div >
                                 <PlacesCollection 
                                     places={places} 
                                     currentUser={currentUser} 

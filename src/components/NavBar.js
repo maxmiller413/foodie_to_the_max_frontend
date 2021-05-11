@@ -1,8 +1,14 @@
 import '../index.css';
+// import React, { useState } from "react"
 import React from "react"
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import DarkMode from './DarkMode'
 import innerFoodie from '../photos/innerFoodie.jpg'
+import Search from "./Search"
+import orig from '../photos/orig.jpg'
+import styles from "./NavBar.module.css"
+import Login from "./Login"
+import SignUp from "./SignUp"
 
 
 function NavBar({ 
@@ -10,8 +16,11 @@ function NavBar({
     isDarkMode,
     onToggleDarkMode,
     currentUser,
-    setCurrentUser
+    setCurrentUser,
+    setPlaces
 }) {
+
+    // const [places, setPlaces] = useState([])
 
     function handleLogout(){
         const userId = localStorage.setItem("userId", null)
@@ -45,48 +54,98 @@ return (
     //     </button>
     // </header>
     // <div className="block">
-    <div className="section hero is-danger" >
-        <nav className="navbar">
-        
-            <div className="navbar-brand">
-                
-            <a href="/">
-                <figure className="image is-128x128">
-                    <img src={innerFoodie} ></img>
-                </figure>
-            </a>     
-                
-                <a href="/" className="navbar-item">
-                    <header className="title is-4">  
+    // <div className="section hero is-danger" >
+    <>
+
+
+
+
+    <nav className="navbar has-background-grey-lighter" >
+        <div className="nav-brand">
+            <div id="navMenu" className="navbar-menu">
+                <div className="navbar-start">
+                    <a href="/" className="navbar">
+                        <figure className="is-64x64">
+                            <img className="is-rounded" src={innerFoodie} className={styles.innerFoodieImage}  />
+                        </figure>
+                          
                         
-                        Inner Foodie 
-                    </header>
-                </a>
-
-            </div>
-
-            <div className="navbar-end">
-                <Link to="/" className="navbar-item"> Home </Link>
+                    </a>  
+                </div>
+            </div>         
+        </div>
+        
+        <div className="navbar-end ">
+            <div className="navbar-item">
+                {/* <div className="buttons">
+                    <a className="button is-dark">Github</a>
+                    <a className="button is-link">Download</a>
+                </div> */}
+                <div className="buttons">
+                    
                 
-                {currentUser ? (
-                    <>
-                        <a href="/wishlists" className="navbar-item" > Wishlists </a>
-                        <Link to="/wishlist/new" className="navbar-item" > New Wishlist </Link>
-                        {/* <Link to="/wishlist_place/new" className="navbar-item" > New Wishlist Place </Link> */}
-                        <Link to="/" className="navbar-item" onClick={handleLogout} > Logout </Link>
-                    </>
-                        ) : (
-                    <>
-                        <Link to="/login" className="navbar-item "> Login </Link>
-                        <Link to="/signup" className="navbar-item"> Signup </Link>
-                    </>
-                )}
-                
+                <NavLink to="/" className="is-active" className="button is-large is-dark"> Home </NavLink>
+                    
+                    {currentUser ? (
+                        <>
+                            <a href="/wishlists" className="button is-large is-dark" > Wishlists </a>
+                            <NavLink to="/wishlist/new" className="button is-large is-dark" > New Wishlist </NavLink>
+                            {/* <NavLink to="/wishlist_place/new"  > New Wishlist Place </NavLink> */}
+                            <NavLink to="/"  onClick={handleLogout} className="button is-large is-dark" > Logout </NavLink>
+                        </>
+                            ) : (
+                        <>
+                        <div > 
+                            <NavLink to="/login" className="button is-large is-dark" > Login </NavLink>
+                            <NavLink to="/signup" className="button is-large is-dark" > Signup </NavLink>
+                        </div>
+                        </>
+                    )}
+                </div>
             </div>
+        </div>
+    </nav>
 
-        </nav>
+{/* <section className={styles.Hero} className="hero primary is-fullheight-with-navbar">
+<div style={{ width: "100%", height: "100%" }}>
+    <div className={styles.Hero} >
+        
     </div>
-    // </div>
+</div>
+</section> */}
+{/* <section style={{ width: "100%", height: "100%" }}>
+
+
+<div className='is-fullheight-with-navbar' className={styles.Hero}>
+ 
+  <div className="hero-body">
+
+  </div>
+ 
+</div>
+</section> */}
+
+<section className="hero is-large" className={styles.Hero} > 
+    <div className="hero-body" > 
+        <div className="container has-text-centered"> 
+        {currentUser ? (
+                        <>
+                            <Search setPlaces={setPlaces}/>
+                        </>
+                            ) : (
+                        <>
+                            <Login />
+                        </>
+                    )}
+
+        </div> 
+    </div>
+</section>
+
+        
+ 
+
+    </>
 )}
 
 export default NavBar

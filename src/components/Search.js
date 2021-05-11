@@ -36,7 +36,7 @@ function Search({ setPlaces }){
 
     return(
         <div className="columns is-centered">
-            <h1> Search </h1>
+            
             <form onSubmit={onhandleSubmit}>
                 <label> Term </label>
                 <input 

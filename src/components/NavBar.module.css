@@ -1,0 +1,57 @@
+.Hero {
+    background-image: url('../photos/orig.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 99%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 20rem ;
+    margin: 0rem;
+    
+  }
+
+.innerFoodieImage {
+    
+    /* width: 100px;
+    height: 100px; */
+    /* display: block;
+    position: relative;
+    background-color: transparent; */
+    background-image: url('../photos/innerFoodie.jpg');
+    
+    
+}
+
+img {
+    margin: 0px;
+    width: 75px;
+    padding-bottom: rem;
+    margin-bottom: rem;
+  }
+
+  
+
+/* .innerFoodieImage::after {
+    content: "";
+    background-image: url('../photos/innerFoodie.jpg');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  } */
+
+nav {
+    padding: 1rem 1rem;
+    
+    height: 100px;
+    
+}
+
+
+    

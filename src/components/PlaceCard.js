@@ -189,7 +189,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                         <p className="subtitle">Phone:</p>
                         <div>{display_phone}</div>
             
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

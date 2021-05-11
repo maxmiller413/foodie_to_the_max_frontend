@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+// import './App';
 import React, { useState, useEffect } from "react"
 // console.log(process.env.REACT_APP_YELP_API_KEY)
 import { Switch, Route } from "react-router-dom"
@@ -15,6 +15,8 @@ import WishlistCard from "./components/WishlistCard"
 import WishlistPlaceForm from "./components/WishlistPlaceForm"
 import { useHistory } from "react-router-dom"
 
+import styles from "./App.module.css"
+
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
@@ -22,6 +24,8 @@ function App() {
   const [wishlists, setWishlists] = useState([])
   const [wishlistPlaces, setWishlistPlaces] = useState([])
   const [placeId, setPlaceId] = useState([])
+  const [places, setPlaces] = useState([])
+  
   
 console.log(placeId)
   useEffect(() => {
@@ -73,17 +77,26 @@ console.log(placeId)
     setPlaceId(newPlace)
   }
   return (
-    <> <NavBar 
+    // <div style={{ width: "100%", height: "100%" }}>
+    //   <div className={styles.Hero}>
+    <div className="appDiv">
+      <div>
+      
+        <NavBar 
           title="foodie_to_the_max"
           isDarkMode={isDarkMode}
           onToggleDarkMode={handleToggleDarkMode}
           currentUser={currentUser}
           setCurrentUser={setCurrentUser}
+          setPlaces={setPlaces}
           // setWishlists={setWishlists}
         />
-    <section className="section hero is-danger is-fullheight" >
+      
+    {/* <section className="section hero is-danger is-fullheight" > */}
      
-        <div className="container">
+        {/* <div className="container"> */}
+       
+
         
         <Switch>
           <Route exact path="/signup">
@@ -123,43 +136,26 @@ console.log(placeId)
                   addNewWishlist={handleNewWishlist}
                   addNewWishlistPlace={handleAddWishlistPlace}
                   onSetPlaceId={onHandlePlaceId}
+                  places={places}
                 /> 
               </>
               ) : (
-                <h1 className="title"> Please Login or SignUp </h1>
+              <>
+              <Login />
+              <SignUp />
+              </>
+              
             )}
           </Route>
           <Route path ="*">
             <h1> 404 not found </h1>
           </Route>
         </Switch>
-      </div>
       
-    </section>
-    </>
+      </div>
+    {/* </section> */}
+    </div>
   )
 }
 
 export default App;
-
-
-
-
-
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
