@@ -1,6 +1,8 @@
 import React from "react"
 import { useHistory } from "react-router-dom";
 import ReactStars from "react-rating-stars-component"
+import styles from './PlaceCard.module.css';
+import RestaurantRating from './RestaurantRating'
 
 function PlaceCard({ place, currentUser, onSetPlaceId }){
     console.log(place)
@@ -10,13 +12,13 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
     const history = useHistory();
 
     const placeCategoriesArr = place.categories.map((category, index) => (
-        <li key={index}> 
+        <span key={index} className={`tag ${styles['restaurant-tag']}`}> 
             {category.title} 
-        </li>
+        </span>
     ))
 
     const placeTransactionOptions = place.transactions.map((transaction, index) => (
-        <span key={index} className="tag"> 
+        <span key={index} className={`tag ${styles['restaurant-tag']}`}> 
             {transaction}
         </span>
     ))
@@ -117,8 +119,25 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
 
   </div>
 </div> */}
+<div className={styles['search-result']}>
+    <img src={image_url} alt={name} className={`${styles['restaurant-image']}`}/>
+    <div className={styles['restaurant-info']}>
+        <h2 className="subtitle"> {name} </h2>
+        <RestaurantRating place={place}/>
+        <p>{price} {placeTransactionOptions}</p>
+        <p>{placeCategoriesArr}</p>
+    </div>
+    <div className={styles['contact-info']}>
+        <p> {display_phone} </p>
+        <p> {location.address1} </p>
+        <p> {location.city}, {location.state} {location.zip_code} </p>
+        <button id={id} onClick={handleOnClick} className='button is-small is-rounded is-success has-text-weight-bold'>
+            Add to Wishlist!
+        </button>
+    </div>
+</div>
 
-
+    {/* <div className={styles['search-result']}>
         <div className="card block notification">
             
             <header className="card-header columns title is-vcentered"> 
@@ -130,16 +149,16 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                 </button>
                 
                 <div className="column is-narrow"></div>
-            </header>
+            </header> */}
             
-            <div className="columns">
+            {/* <div className="columns">
                 <div className="column is-6 card-image">
-                    <figure className="image ">
-                        <img src={image_url} alt={name}/>
+                    <figure >
+                        <img src={image_url} alt={name} className={styles['restaurant-image']}/>
                     </figure>
-                </div> 
+                </div>  */}
 
-                <div className="column card-content">
+                {/* <div className="column card-content">
                     <div className="content">
                         <p> Rating: </p>
                         <div className="columns">
@@ -172,15 +191,15 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                         <p> Review Count: {review_count} </p>
                         Restaurant Website: <a href={url}> {name}</a>
                         {/* <p> Open Now: ({is_closed} ? Closed : Open) </p> */}
-                        <p>Open Now: {!is_closed ? ( "Closed" ) : ( "Open" )}</p>
+                        {/* <p>Open Now: {!is_closed ? ( "Closed" ) : ( "Open" )}</p>
                         <p> Price: {price} </p>
                         <ul>
                             {placeTransactionOptions}
                         </ul>
                     </div>
-                </div>
+                </div> } }
 
-                <div className="column card-content">
+                {/* <div className="column card-content">
                     <div className="content">
                         
                         <div className="margin-right">{location.address1}</div>
@@ -190,10 +209,11 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
                         <div>{display_phone}</div>
             
                     </div> 
-                </div>
-            </div>
+                </div> */}
+            {/* </div>
         </div>
-        </>
+        </div> */}
+    </>
     )
 }
 // const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state} = place

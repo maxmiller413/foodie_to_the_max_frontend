@@ -12,14 +12,15 @@
     opacity: 99%;
     flex-grow: 1;
     flex-shrink: 0;
-    padding: 20rem ;
+    padding: 17rem ;
     margin: 0rem;
+    padding: 15rem;
     
   }
 
 .innerFoodieImage {
-    width: 82px;
-    height: 82px;
+    width: 75px;
+    height: 75px;
     display: block;
     position: relative;
     background-color: transparent;
@@ -48,10 +49,10 @@
 
   
 .nav-bar {
-    padding: 1rem .5rem;
-    height: 100px;
+    padding: 2rem 1rem;
+    height: 90px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background: #E62020;
     /* margin: var(--element-spacing); */

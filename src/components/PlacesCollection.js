@@ -1,6 +1,6 @@
 import React from "react"
 import PlaceCard from "./PlaceCard"
-import './PlacesCollection.module.css';
+import styles from './PlacesCollection.module.css';
 
 function PlacesCollection({ places, currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceId }){
     console.log(places)
@@ -15,9 +15,9 @@ function PlacesCollection({ places, currentUser, addNewWishlist, addNewWishlistP
         />
     ))
     return(      
-        <>
+        <div className={styles['search-results']}>
             {placesArr} 
-        </>
+        </div>
         
         
     )

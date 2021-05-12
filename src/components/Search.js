@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import {API_BASE_URL, BEARER_TOKEN} from '../hooks/yelp-api/config.js'
 import styles from "./Search.module.css"
 
+
 function Search({ setPlaces }){
 
     const [term, setTerm] = useState([])
@@ -57,9 +58,9 @@ function Search({ setPlaces }){
                 </p>
 
     
-                <p className='control'>
-                    <button className="button is-static is-medium"> NEAR </button>
-                </p>
+                <div className='control'>
+                    <div className="button is-static is-medium"> NEAR </div>
+                </div>
                 <p className="control">
                     <input 
                     type="text"

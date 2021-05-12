@@ -49,15 +49,15 @@ function WishlistPlaceForm({wishlists, placeId, setPlaceId, handleAddWishlistPla
         
         <div>
             <form onSubmit={handleSubmit}>
-                <h1 > Add a Wishlist Place </h1>
+                {/* <h1 > Add a Wishlist Place </h1>
 
                 <label > Choose a Place </label>
                 <input
                 type="text"
                 placeholder="1"
-                // value={placeId}
-                // onChange={e => setPlaceId(e.target.value)}
-                />
+                value={placeId}
+                onChange={e => setPlaceId(e.target.value)}
+                /> */}
 
                 <label > Choose a Wishlist </label>
                 <select value={wishlistTitle} onChange={e => setWishlistTitle(e.target.value)}>

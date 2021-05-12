@@ -1,0 +1,36 @@
+.search-result {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.restaurant-image {
+    width: 325px;
+    height: 300px;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.restaurant-info {
+    min-width: 400px;
+}
+
+.restaurant-info p {
+    margin-right: .5rem;
+    padding: .5rem;
+
+  }
+
+.contact-info p {
+    font-size: .85rem;
+}
+
+:global(.tag).restaurant-tag {
+    margin: 5px;
+    padding: 3px
+}
+
+/* .button-wish {
+    padding: 10px 20px;
+    align-content: flex-end
+} */

@@ -3,6 +3,7 @@ import React, { useState } from "react"
 // import Search from "./Search"
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
+import styles from "./HomePage.module.css"
 
 function HomePage({currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceId, places, showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview}){
 
@@ -12,7 +13,7 @@ function HomePage({currentUser, addNewWishlist, addNewWishlistPlace, onSetPlaceI
 
     <div>
         <div>
-            <h1 className='subtitle'> <strong> burgers </strong> berlin </h1>
+            
             <Filter 
                 showRes={showRes}
                 setShowRes={setShowRes}

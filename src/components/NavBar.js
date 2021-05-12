@@ -55,17 +55,17 @@ return (
     // <div className="block">
     // <div className="section hero is-danger" >
     <>
-    <nav className={`navbar ${styles['nav-bar']}`} >
+    <nav className={` ${styles['nav-bar']}`} >
         <div className="nav-brand">
             <div id="navMenu" className="navbar-menu">
                 <div className="navbar-start">
-                    <a href="/" className="navbar">
+                    <NavLink to="/" className="navbar">
                         <figure className="is-64x64">
                             <img className="is-rounded" src={innerFoodie} className={styles.innerFoodieImage}  />
                         </figure>
                           
                         
-                    </a>  
+                    </NavLink>  
                 </div>
             </div>         
         </div>
@@ -79,20 +79,20 @@ return (
                 <div className="buttons">
                     
                 
-                <NavLink to="/" className="is-active" className="button is-large is-dark"> Home </NavLink>
+                <NavLink to="/" className="is-active" className="button is-medium is-dark"> Home </NavLink>
                     
                     {currentUser ? (
                         <>
-                            <a href="/wishlists" className="button is-large is-dark" > Wishlists </a>
-                            <NavLink to="/wishlist/new" className="button is-large is-dark" > New Wishlist </NavLink>
+                            <a href="/wishlists" className="button is-medium is-dark" > Wishlists </a>
+                            <NavLink to="/wishlist/new" className="button is-medium is-dark" > New Wishlist </NavLink>
                             {/* <NavLink to="/wishlist_place/new"  > New Wishlist Place </NavLink> */}
-                            <NavLink to="/"  onClick={handleLogout} className="button is-large is-dark" > Logout </NavLink>
+                            <NavLink to="/"  onClick={handleLogout} className="button is-medium is-dark" > Logout </NavLink>
                         </>
                             ) : (
                         <>
                         <div > 
-                            <NavLink to="/login" className="button is-large is-dark" > Login </NavLink>
-                            <NavLink to="/signup" className="button is-large is-dark" > Signup </NavLink>
+                            <NavLink to="/login" className="button is-medium is-dark" > Login </NavLink>
+                            <NavLink to="/signup" className="button is-medium is-dark" > Signup </NavLink>
                         </div>
                         </>
                     )}
@@ -120,10 +120,13 @@ return (
 </div>
 </section> */}
 
-    <section className="hero is-large" className={styles.Hero} > 
+    <section className="hero is-medium" className={styles.Hero} > 
         <div className="hero-body" > 
             <div className="container has-text-centered"> 
-            <Search setPlaces={setPlaces}/>
+            <Search 
+                setPlaces={setPlaces}
+                
+            />
 
             </div> 
         </div>
