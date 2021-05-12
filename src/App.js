@@ -28,6 +28,8 @@ function App() {
   const [showRes, setShowRes] = useState(true);
   const [sortBy, setSortBy] = useState("All");
   const [rating, setRating] = useState("All")
+  const [review, setReview] = useState("All")
+
   
   
 console.log(placeId)
@@ -83,25 +85,26 @@ console.log(placeId)
   const resPlacesArr = places
     .filter((place) => {
        return (sortBy === "All" || place.price === sortBy)
-    })
+  })
     .filter((place) => {
       return (place.is_closed !== showRes)
-   })
+  })
    .filter((place) => {
     return (rating === "All" || place.rating >= rating)
- })
+  })
+  
    
   //   .filter(car => {
   //     return type === "All" || car.vehicle_type === type
   // })
     // .filter((place) => place.open_now !== showRes)
-  // .sort((place1, place2) => {
-  //   if (sortBy === "price") {
-  //     return place1.price - place2.price;
-  //   } else {
-  //     return place1.name.localeCompare(place2.name);
-  //   }
-  
+  .sort((place1, place2) => {
+    if (sortBy === "review_count") {
+      return place1.review_count - place2.review_count;
+    } else {
+      return place1.name.localeCompare(place2.name);
+    }
+  })
   
 
   return (
@@ -172,6 +175,8 @@ console.log(placeId)
                   setSortBy={setSortBy}
                   rating={rating}
                   setRating={setRating}
+                  review={review}
+                  setReview={setReview}
                 /> 
               </>
               ) : (

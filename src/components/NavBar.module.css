@@ -1,3 +1,7 @@
+:root {
+  --element-space: 1.5rem;
+}
+
 .Hero {
     background-image: url('../photos/orig.jpg');
     background-position: center;
@@ -14,25 +18,21 @@
   }
 
 .innerFoodieImage {
-    
-    /* width: 100px;
-    height: 100px; */
-    /* display: block;
+    width: 82px;
+    height: 82px;
+    display: block;
     position: relative;
-    background-color: transparent; */
+    background-color: transparent;
     background-image: url('../photos/innerFoodie.jpg');
-    
     
 }
 
-img {
+/* img {
     margin: 0px;
     width: 75px;
     padding-bottom: rem;
     margin-bottom: rem;
-  }
-
-  
+  } */
 
 /* .innerFoodieImage::after {
     content: "";
@@ -46,14 +46,26 @@ img {
     z-index: -1;   
   } */
 
-nav {
-    padding: 1rem 1rem;
-    
+  
+.nav-bar {
+    padding: 1rem .5rem;
     height: 100px;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E62020;
+    /* margin: var(--element-spacing); */
+}
+/* .left > * {
+  margin-right: var(--element-spacing);
+}
+.right {
+  display: flex;
+  align-items: center;
 }
 
-div.id {
-  toggle: "is-active";
-}
+.right > * {
+  margin-left: var(--element-spacing);
+} */
+
     

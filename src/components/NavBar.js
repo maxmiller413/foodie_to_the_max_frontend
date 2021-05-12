@@ -55,11 +55,7 @@ return (
     // <div className="block">
     // <div className="section hero is-danger" >
     <>
-
-
-
-
-    <nav className="navbar has-background-grey-lighter" >
+    <nav className={`navbar ${styles['nav-bar']}`} >
         <div className="nav-brand">
             <div id="navMenu" className="navbar-menu">
                 <div className="navbar-start">
@@ -124,19 +120,15 @@ return (
 </div>
 </section> */}
 
-<section className="hero is-large" className={styles.Hero} > 
-    <div className="hero-body" > 
-        <div className="container has-text-centered"> 
-           <Search setPlaces={setPlaces}/>
+    <section className="hero is-large" className={styles.Hero} > 
+        <div className="hero-body" > 
+            <div className="container has-text-centered"> 
+            <Search setPlaces={setPlaces}/>
 
-        </div> 
-    </div>
-</section>
-
-        
- 
-
-    </>
+            </div> 
+        </div>
+    </section>
+</>
 )}
 
 export default NavBar

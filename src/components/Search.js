@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import {API_BASE_URL, BEARER_TOKEN} from '../hooks/yelp-api/config.js'
+import styles from "./Search.module.css"
 
 function Search({ setPlaces }){
 
@@ -32,15 +33,18 @@ function Search({ setPlaces }){
         .then(response => response.json())
         .then(placesArr => setPlaces(placesArr.businesses))
         // .catch(error => console.log('error', error));
+        // e.target.reset()
        
     }
 
     return(
         <div className="columns is-centered ">
             
-            <form onSubmit={onhandleSubmit} className="field">
-                <label> Term </label>
-                <div className="control is-medium">
+            <form onSubmit={onhandleSubmit} className="field has-addons">
+                <p className='control'>
+                    <button className="button is-static is-medium"> SEARCH </button>
+                </p>
+                <p className="control">
                     <input 
                     type="text"
                     id="term"
@@ -48,25 +52,30 @@ function Search({ setPlaces }){
                     placeholder="Search by cuisine!"
                     value={term}
                     onChange={e => setTerm(e.target.value)}
-                    className="input is-medium"
+                    className={`input is-medium ${styles['input-control']}`}
                     />
-                </div>
+                </p>
 
-                
-
-            <label> Location </label>
-                <div className="control is-medium">
+    
+                <p className='control'>
+                    <button className="button is-static is-medium"> NEAR </button>
+                </p>
+                <p className="control">
                     <input 
                     type="text"
                     id="location"
                     name="location"
-                    placeholder="Search by address or city!"
+                    placeholder="Location"
                     value={location}
                     onChange={e => setLocation(e.target.value)}
                     className="input is-medium"
                     />
-                </div>
-                <button type="submit">Search</button>
+                </p>
+                <button className={`button is-medium ${styles['search-button']}`}>
+                    <span className="icon is-small">
+                        <i className="fas fa-search"></i>
+                    </span>
+                </button>
             </form>
         </div>
     )
