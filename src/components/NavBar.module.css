@@ -9,19 +9,19 @@
     background-size: cover;
     height: 100%;
     width: 100%;
-    opacity: 99%;
+    opacity: 100%;
     flex-grow: 1;
     flex-shrink: 0;
     padding: 20rem;
     margin: 0rem;
     
-    
   }
 
 .innerFoodieImage {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     display: block;
+    opacity: 100%;
     /* position: relative;
     background-color: transparent;
     background-image: url('../photos/innerFoodie.jpg'); */
@@ -49,13 +49,13 @@
 
   
 .nav-bar {
-    padding: 2rem 1rem;
+    padding: 1rem;
     height: 90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: #E62020;
-    /* margin: var(--element-spacing); */
+    margin: var(--element-spacing);
 }
 /* .left > * {
   margin-right: var(--element-spacing);
@@ -69,3 +69,6 @@
   margin-left: var(--element-spacing);
 } */
 
+.form-search{
+  margin-bottom: 5rem;
+}

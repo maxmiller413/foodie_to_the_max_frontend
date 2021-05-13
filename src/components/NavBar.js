@@ -173,8 +173,8 @@ return (
     </div>
 
     <section className="hero is-medium" className={styles.Hero} > 
-        <div className="hero-body" > 
-            <div className="container has-text-centered"> 
+        <div className={`hero-body ${styles['form-search']}`} > 
+            <div className={`${styles['form-search']}`}> 
                 <Search 
                     setPlaces={setPlaces}
                 />

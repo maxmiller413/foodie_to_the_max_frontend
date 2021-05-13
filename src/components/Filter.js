@@ -21,12 +21,12 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 			<h1 className='subtitle'> <strong> burgers </strong> berlin </h1>
 			<p> Showing 1020 out of 543 results</p>
 		</div>
-		<div className={styles.filters}>
+		<div className={`${styles.filters} control-has-icons`}>
 
 			<button className="button is-large has-addons">
 				<span className="icon">
 					
-					<i className="fas fa-sliders-h"></i>
+				<i className="fas fa-filter"></i>
 				</span>
 				<span>All Filters</span>
 			</button>
@@ -38,12 +38,12 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 				<button className="button">$$$$</button>
 			</div>
 
-			<button className="button">
+			<button className="button has-addons">
 				<span className="icon"><i className="fas fa-clock"></i></span>
 				<span>Open Now</span>
 			</button>
 
-			<button className="button">
+			<button className="button has-addons">
 				<span className="icon"><i className="fa fa-dollar-sign"></i></span>
 				<span>CashBack</span>
 			</button>

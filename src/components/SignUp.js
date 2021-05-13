@@ -66,7 +66,7 @@ function SignUp ({ setCurrentUser, handleSignUpClick }) {
     
 
     return(
-        <div className={`styles['login-div'] container`}>
+        <div className={`styles['login-div'] `}>
             <form onSubmit={handleSubmit} value='' className={`field has-addons ${styles.login}`}>
 
             <p className='control'>

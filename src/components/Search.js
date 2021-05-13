@@ -41,7 +41,7 @@ function Search({ setPlaces }){
     return(
         <div className="columns is-centered ">
             
-            <form onSubmit={onhandleSubmit} className="field has-addons">
+            <form onSubmit={onhandleSubmit} className={`field has-addons`}>
                 <p className='control'>
                     <button className="button is-static is-medium"> SEARCH </button>
                 </p>
