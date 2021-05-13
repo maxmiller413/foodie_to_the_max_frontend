@@ -2,14 +2,15 @@ import React from "react"
 import PlaceCard from "./PlaceCard"
 import styles from './PlacesCollection.module.css';
 
-function PlacesCollection({ places, currentUser, addNewWishlistPlace, onSetPlaceId }){
+function PlacesCollection({ places, currentUser, addNewWishlistPlace, onSetPlaceId, wishlists, placeId }){
     console.log(places)
     const placesArr = places.map(place => (
         <PlaceCard 
             key={place.id}
             place={place}
             currentUser={currentUser}
-            
+            wishlists={wishlists}
+            placeId={placeId}
             addNewWishlistPlace={addNewWishlistPlace}
             onSetPlaceId={onSetPlaceId}
         />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom"
 
-function WishlistPlaceForm({wishlists, placeId, setPlaceId, handleAddWishlistPlace }){
+function WishlistPlaceForm({wishlists, placeId, setPlaceId, addNewWishlistPlace }){
     
     const [wishlistTitle, setWishlistTitle] = useState("")
     const history = useHistory()
@@ -37,7 +37,7 @@ function WishlistPlaceForm({wishlists, placeId, setPlaceId, handleAddWishlistPla
         })
             .then(r => r.json())
             .then(newWishlistPlace => {
-                handleAddWishlistPlace(newWishlistPlace)
+                addNewWishlistPlace(newWishlistPlace)
                 history.push(`/wishlists/${newWishlistPlace.wishlist.id}`)
             })
             

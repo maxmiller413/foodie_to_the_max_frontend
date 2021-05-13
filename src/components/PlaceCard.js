@@ -1,13 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 import ReactStars from "react-rating-stars-component"
 import styles from './PlaceCard.module.css';
 import RestaurantRating from './RestaurantRating'
+import WishlistPlaceForm from "./WishlistPlaceForm"
 
-function PlaceCard({ place, currentUser, onSetPlaceId }){
+function PlaceCard({ place, currentUser, onSetPlaceId, addNewWishlistPlace, wishlists, placeId }){
     console.log(place)
 
     const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state, is_closed} = place
+
+    const [wishlistPlaceModal, setWishlistPlaceModal] = useState(false)
 
     const history = useHistory();
 
@@ -48,7 +51,8 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
             .then(r => r.json())
             .then(newPlace => {
                 onSetPlaceId(newPlace)
-                history.push('/wishlist_place/new')
+                // history.push('/wishlist_place/new')
+                setWishlistPlaceModal((wishlistPlaceModal) => !wishlistPlaceModal)
             })
 
 
@@ -96,6 +100,10 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
         // })
 
     // }
+
+    function handleNewWishlistPlaceClick(){
+        setWishlistPlaceModal((wishlistPlaceModal) => !wishlistPlaceModal)
+    }
     return(
 <>
 {/* <div className="modal is-active">
@@ -213,6 +221,29 @@ function PlaceCard({ place, currentUser, onSetPlaceId }){
             {/* </div>
         </div>
         </div> */}
+        <div className={wishlistPlaceModal ? 'modal is-active' : 'modal'}>
+        <div className="modal-background" onClick={handleNewWishlistPlaceClick} ></div>
+        <div className="modal-card">
+            <header className="modal-card-head">
+                <p className="modal-card-title">New Wishlist Place</p>
+                <button className="delete" aria-label="close" onClick={handleNewWishlistPlaceClick} ></button>
+            </header>
+
+            <section className={`modal-card-body ${styles.modal}`}>
+                <WishlistPlaceForm 
+                    currentUser={currentUser} 
+                    wishlists={wishlists}
+                    placeId={placeId}
+                    addNewWishlistPlace={addNewWishlistPlace}
+                />
+            </section>
+            
+            <footer className="modal-card-foot">
+                {/* <button className="button is-success">Save changes</button> */}
+                <button className="modal-close is-large" aria-label="close" onClick={handleNewWishlistPlaceClick} >Cancel</button>
+            </footer>
+        </div>
+    </div>
     </>
     )
 }

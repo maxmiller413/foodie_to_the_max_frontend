@@ -5,7 +5,7 @@ import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 import styles from "./HomePage.module.css"
 
-function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview}){
+function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview, wishlists, placeId}){
 
     // const [places, setPlaces] = useState([])
 
@@ -23,6 +23,7 @@ function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showR
                 setRating={setRating}
                 review={review}
                 setReview={setReview}
+                
             />
         </div>
             
@@ -30,8 +31,8 @@ function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showR
             <PlacesCollection 
                 places={places} 
                 currentUser={currentUser} 
-                
-                
+                wishlists={wishlists}
+                placeId={placeId}
                 addNewWishlistPlace={addNewWishlistPlace}
                 onSetPlaceId={onSetPlaceId}
             />

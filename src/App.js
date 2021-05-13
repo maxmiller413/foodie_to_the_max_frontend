@@ -12,7 +12,7 @@ import WishlistPlaceCard from "./components/WishlistPlaceCard"
 import NavBar from "./components/NavBar"
 import WishlistForm from "./components/WishlistForm"
 import WishlistCard from "./components/WishlistCard"
-import WishlistPlaceForm from "./components/WishlistPlaceForm"
+// import WishlistPlaceForm from "./components/WishlistPlaceForm"
 import { useHistory } from "react-router-dom"
 
 import styles from "./App.module.css"
@@ -143,9 +143,9 @@ console.log(placeId)
             <WishlistForm currentUser={currentUser} onAddWishlist={handleNewWishlist}/>
           </Route> */}
 
-          <Route exact path="/wishlist_place/new">
+          {/* <Route exact path="/wishlist_place/new">
             <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} handleAddWishlistPlace={handleAddWishlistPlace} />
-          </Route>
+          </Route> */}
 
           <Route exact path="/wishlist_places/:id/places">
             <WishlistPlaceCard/>
@@ -178,6 +178,8 @@ console.log(placeId)
                   setRating={setRating}
                   review={review}
                   setReview={setReview}
+                  wishlists={wishlists}
+                  placeId={placeId}
                 /> 
               </>
               ) : (
