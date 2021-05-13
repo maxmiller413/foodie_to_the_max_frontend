@@ -21,7 +21,8 @@ function NavBar({
     
 }) {
 
-    const [loginModal, setLoginModal] = useState(true)
+    const [loginModal, setLoginModal] = useState(false)
+    const [signUpModal, setSignUpModal] = useState(false)
 
     // const [places, setPlaces] = useState([])
 
@@ -31,7 +32,11 @@ function NavBar({
     }
 
     function handleOnClick(){
-        setLoginModal(() => !loginModal)
+        setLoginModal((loginModal) => !loginModal)
+    }
+
+    function handleSignUpClick(){
+        setSignUpModal((signUpModal) => !signUpModal)
     }
 
 return (
@@ -94,7 +99,7 @@ return (
                         <>
                         <div > 
                             <div className="button is-medium is-dark" onClick={handleOnClick}> Login </div>
-                            <NavLink to="/signup" className="button is-medium is-dark" > Signup </NavLink>
+                            <div  className="button is-medium is-dark" onClick={handleSignUpClick} > Signup </div>
                         </div>
                         </>
                     )}
@@ -120,6 +125,25 @@ return (
             <footer className="modal-card-foot">
                 {/* <button className="button is-success">Save changes</button> */}
                 <button className="modal-close is-large" aria-label="close" onClick={handleOnClick} >Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+    <div className={signUpModal ? 'modal is-active' : 'modal'}>
+        <div className="modal-background" onClick={handleSignUpClick} ></div>
+        <div className="modal-card">
+            <header className="modal-card-head">
+                <p className="modal-card-title">Signup</p>
+                <button className="delete" aria-label="close" onClick={handleSignUpClick} ></button>
+            </header>
+
+            <section className={`modal-card-body ${styles.modal}`}>
+                <SignUp setCurrentUser={setCurrentUser} handleSignUpClick={handleSignUpClick}/>
+            </section>
+            
+            <footer className="modal-card-foot">
+                {/* <button className="button is-success">Save changes</button> */}
+                <button className="modal-close is-large" aria-label="close" onClick={handleSignUpClick} >Cancel</button>
             </footer>
         </div>
     </div>

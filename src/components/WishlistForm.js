@@ -25,7 +25,7 @@ function WishlistForm({ currentUser, onAddWishlist }){
       })
         .then (r => r.json())
         .then(newWishList => onAddWishlist(newWishList))
-        history.push("/wishlists/")
+        history.push("/")
 
     }
 

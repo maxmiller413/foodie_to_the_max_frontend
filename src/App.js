@@ -7,8 +7,8 @@ import HomePage from "./components/HomePage"
 import WishlistsCollection from "./components/WishlistsCollection"
 import WishlistDetails from "./components/WishlistDetails"
 import WishlistPlaceCard from "./components/WishlistPlaceCard"
-import SignUp from "./components/SignUp"
-import Login from "./components/Login"
+// import SignUp from "./components/SignUp"
+// import Login from "./components/Login"
 import NavBar from "./components/NavBar"
 import WishlistForm from "./components/WishlistForm"
 import WishlistCard from "./components/WishlistCard"
@@ -130,9 +130,9 @@ console.log(placeId)
 
         
         <Switch>
-          <Route exact path="/signup">
+          {/* <Route exact path="/signup">
             <SignUp setCurrentUser={setCurrentUser} />
-          </Route>
+          </Route> */}
 
           {/* <Route exact path="/login">
             <Login setCurrentUser={setCurrentUser} />
