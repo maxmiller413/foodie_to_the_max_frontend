@@ -35,3 +35,7 @@
 .filters > * {
   margin-right: .7rem;
 }
+
+.select-control {
+  min-width: 60px;
+}

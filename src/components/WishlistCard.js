@@ -20,12 +20,26 @@ function WishlistCard({ wishlistPlaces, currentUser, setWishlistPlaces }){
      return(
          <section className="section">
              <div className="container">
-                <header> Wishlist Places </header>
-                <ul>
-                    {wishlistPlacesArr}
-                </ul>
+                <div className="columns is-centered">
+                    <div className="column is-half is-offset-one-quarter card">
+                    
+                    {/* <div class="card-image">
+                        <figure class="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                        </figure>
+                    </div> */}
+                        
+                        <header className="title"> Wishlist Places </header>
+                        <ol className="column">
+                            {wishlistPlacesArr}
+                        </ol>
+                    
+                    </div>
+                </div>
             </div>
-         </section>
+        </section>
+
+         
         
        
 

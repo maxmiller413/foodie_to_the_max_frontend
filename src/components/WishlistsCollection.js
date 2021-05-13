@@ -19,7 +19,7 @@ function WishlistsCollection({ wishlists }){
         <section className="section">
             <div className="container">
                 <div className="columns">
-                <div className="column"> 
+                <div className="column card"> 
                     <div className="search-results"> 
                         <header className="notification is-success is-align-items-center">Wishlists</header>
                         <ul className="notification">

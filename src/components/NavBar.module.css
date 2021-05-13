@@ -12,9 +12,9 @@
     opacity: 99%;
     flex-grow: 1;
     flex-shrink: 0;
-    padding: 17rem ;
+    padding: 20rem;
     margin: 0rem;
-    padding: 15rem;
+    
     
   }
 
@@ -22,9 +22,9 @@
     width: 75px;
     height: 75px;
     display: block;
-    position: relative;
+    /* position: relative;
     background-color: transparent;
-    background-image: url('../photos/innerFoodie.jpg');
+    background-image: url('../photos/innerFoodie.jpg'); */
     
 }
 

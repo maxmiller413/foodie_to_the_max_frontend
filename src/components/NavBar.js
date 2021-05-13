@@ -63,8 +63,6 @@ return (
                         <figure className="is-64x64">
                             <img className="is-rounded" src={innerFoodie} className={styles.innerFoodieImage}  />
                         </figure>
-                          
-                        
                     </NavLink>  
                 </div>
             </div>         
@@ -72,13 +70,7 @@ return (
         
         <div className="navbar-end ">
             <div className="navbar-item">
-                {/* <div className="buttons">
-                    <a className="button is-dark">Github</a>
-                    <a className="button is-link">Download</a>
-                </div> */}
                 <div className="buttons">
-                    
-                
                 <NavLink to="/" className="is-active" className="button is-medium is-dark"> Home </NavLink>
                     
                     {currentUser ? (

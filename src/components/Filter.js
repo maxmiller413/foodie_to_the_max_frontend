@@ -33,6 +33,7 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 				<button className="button">$</button>
 				<button className="button">$$</button>
 				<button className="button">$$$</button>
+				<button className="button">$$$$</button>
 			</div>
 
 			<button className="button">
@@ -52,15 +53,17 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 			</div>
 			<div className="ui item">
 				<select
-					className="ui selection dropdown"
+					className={styles['select-control']}
 					name="sort"
 					onChange={handleChangeSortBy}
 					value={sortBy}
+					
 				>
 					<option value="All">All</option>
 					<option value="$">$</option>
 					<option value="$$">$$</option>
 					<option value="$$$">$$$</option>
+					<option value="$$$$">$$$$</option>
 				</select>
 			</div>
 		
