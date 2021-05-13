@@ -1,12 +1,14 @@
-import '../index.css';
-// import React, { useState } from "react"
-import React from "react"
+// import '../index.css';
+import React, { useState } from "react"
+// import React from "react"
 import { NavLink } from "react-router-dom";
 import DarkMode from './DarkMode'
 import innerFoodie from '../photos/innerFoodie.jpg'
 import Search from "./Search"
 import orig from '../photos/orig.jpg'
 import styles from "./NavBar.module.css"
+import SignUp from "./SignUp"
+import Login from "./Login"
 
 
 function NavBar({ 
@@ -19,11 +21,17 @@ function NavBar({
     
 }) {
 
+    const [loginModal, setLoginModal] = useState(true)
+
     // const [places, setPlaces] = useState([])
 
     function handleLogout(){
         const userId = localStorage.setItem("userId", null)
         setCurrentUser(userId)
+    }
+
+    function handleOnClick(){
+        setLoginModal(() => !loginModal)
     }
 
 return (
@@ -67,23 +75,25 @@ return (
                 </div>
             </div>         
         </div>
-        
-        <div className="navbar-end ">
-            <div className="navbar-item">
+
+
+        <div className={("navbar-end")}>
+            <div className="navbar-item has-dropdown is-active">
                 <div className="buttons">
                 <NavLink to="/" className="is-active" className="button is-medium is-dark"> Home </NavLink>
                     
                     {currentUser ? (
                         <>
-                            <a href="/wishlists" className="button is-medium is-dark" > Wishlists </a>
+                            
                             <NavLink to="/wishlist/new" className="button is-medium is-dark" > New Wishlist </NavLink>
                             {/* <NavLink to="/wishlist_place/new"  > New Wishlist Place </NavLink> */}
+                            <NavLink to="/wishlists" className="button is-medium is-dark" > Wishlists </NavLink>
                             <NavLink to="/"  onClick={handleLogout} className="button is-medium is-dark" > Logout </NavLink>
                         </>
                             ) : (
                         <>
                         <div > 
-                            <NavLink to="/login" className="button is-medium is-dark" > Login </NavLink>
+                            <div className="button is-medium is-dark" onClick={handleOnClick}> Login </div>
                             <NavLink to="/signup" className="button is-medium is-dark" > Signup </NavLink>
                         </div>
                         </>
@@ -93,33 +103,34 @@ return (
         </div>
     </nav>
 
-{/* <section className={styles.Hero} className="hero primary is-fullheight-with-navbar">
-<div style={{ width: "100%", height: "100%" }}>
-    <div className={styles.Hero} >
-        
+
+
+    <div className={loginModal ? 'modal is-active' : 'modal'}>
+        <div className="modal-background" onClick={handleOnClick} ></div>
+        <div className="modal-card">
+            <header className="modal-card-head">
+                <p className="modal-card-title">Login</p>
+                <button className="delete" aria-label="close" onClick={handleOnClick} ></button>
+            </header>
+
+            <section className={`modal-card-body ${styles.modal}`}>
+                <Login setCurrentUser={setCurrentUser} handleOnClick={handleOnClick}/>
+            </section>
+            
+            <footer className="modal-card-foot">
+                {/* <button className="button is-success">Save changes</button> */}
+                <button className="modal-close is-large" aria-label="close" onClick={handleOnClick} >Cancel</button>
+            </footer>
+        </div>
     </div>
-</div>
-</section> */}
-{/* <section style={{ width: "100%", height: "100%" }}>
-
-
-<div className='is-fullheight-with-navbar' className={styles.Hero}>
- 
-  <div className="hero-body">
-
-  </div>
- 
-</div>
-</section> */}
 
     <section className="hero is-medium" className={styles.Hero} > 
         <div className="hero-body" > 
             <div className="container has-text-centered"> 
-            <Search 
-                setPlaces={setPlaces}
-                
-            />
-
+                <Search 
+                    setPlaces={setPlaces}
+                    
+                />
             </div> 
         </div>
     </section>

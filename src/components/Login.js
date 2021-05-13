@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
+import styles from "./Login.module.css"
 
-function Login ({ setCurrentUser }) {
+function Login ({ setCurrentUser , handleOnClick}) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -28,6 +29,7 @@ function Login ({ setCurrentUser }) {
         .then(user => {
             localStorage.setItem("userId", user.id)
             setCurrentUser(user)
+            handleOnClick()
             history.push("/")
         })
 
@@ -51,34 +53,54 @@ function Login ({ setCurrentUser }) {
     //     .catch((data) => {
     //     setErrors(data.errors);
     //     });
+        
      }
 
     return (
-        <div>
-          <form onSubmit={handleSubmit} >
-            <h1 > Login</h1>
-            <label > Username</label>
-            <input
+        <div className={`styles['login-div'] container`}>
+          <form onSubmit={handleSubmit} value='' className={`field has-addons ${styles.login}`}>
+            
+          <p className='control'>
+            <button className="button is-static is-medium"> Username </button>
+          </p>
+
+          <p className="control">
+            <input 
               type="text"
               name="username"
               value={formData.username}
               onChange={handleChange}
+              className={`input is-medium ${styles['input-control']}`}
             />
-            <label >Password</label>
-            <input
+          </p>
+            
+          <div className='control'>
+              <div className="button is-static is-medium "> 
+                Password 
+              </div>
+          </div>
+
+          <p className="control">
+            <input 
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
+              className={`input is-medium ${styles['input-control']}`}
             />
-    
+          </p>
             {errors.map((error) => (
               <p key={error} style={{ color: "red" }}>
                 {error}
               </p>
             ))}
 
-            <input type="submit" value="Login" />
+          <button className={`button is-medium ${styles['search-button']}`}>
+              <span className="icon is-small">
+              <i className="fa fa-user" aria-hidden="true"></i>
+
+              </span>
+          </button>
           </form>
         </div>
     );

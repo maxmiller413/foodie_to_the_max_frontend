@@ -134,9 +134,9 @@ console.log(placeId)
             <SignUp setCurrentUser={setCurrentUser} />
           </Route>
 
-          <Route exact path="/login">
+          {/* <Route exact path="/login">
             <Login setCurrentUser={setCurrentUser} />
-          </Route>
+          </Route> */}
 
           <Route exact path="/wishlist/new">
             <WishlistForm currentUser={currentUser} onAddWishlist={handleNewWishlist}/>

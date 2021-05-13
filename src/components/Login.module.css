@@ -1,0 +1,33 @@
+.login-div {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    margin: 5px 0;
+    
+    
+    
+}
+.input-control {
+    min-width: 150px;
+   
+}
+
+:global(.button).search-button{
+    background: #E62020;
+    border: none;
+    padding: 1.5rem;
+    
+}
+
+:global(.icon){
+    color: white;
+}
+
+.form{
+    border-radius: .5rem;
+    justify-content: space-between;
+}
