@@ -12,7 +12,7 @@ function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showR
     return(
 
     <div>
-        <div>
+        <div className={`${styles['filter-wrapper']}`}>
             
             <Filter 
                 showRes={showRes}

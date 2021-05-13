@@ -1,6 +1,7 @@
 
 import { useParams } from "react-router-dom"
 import React, {useEffect } from "react"
+import styles from './WishlistCard.module.css';
 
 function WishlistCard({ wishlistPlaces, currentUser, setWishlistPlaces }){
      
@@ -18,23 +19,19 @@ function WishlistCard({ wishlistPlaces, currentUser, setWishlistPlaces }){
         <li key={place.id}>  {place.name} </li>
     ))
      return(
-         <section className="section">
+         <section className={`section ${styles['search-result']}`}>
              <div className="container">
-                <div className="columns is-centered">
-                    <div className="column is-half is-offset-one-quarter card">
-                    
-                    {/* <div class="card-image">
-                        <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                        </figure>
-                    </div> */}
-                        
-                        <header className="title"> Wishlist Places </header>
-                        <ol className="column">
-                            {wishlistPlacesArr}
-                        </ol>
-                    
+                <div className="columns">
+                    <div className="column"></div>
+                    <div className="column card">
+                        <div className="search-results">
+                            <header className="notification is-success title has-text-centered"> Wishlist Places </header>
+                            <ol className="notification">
+                                {wishlistPlacesArr}
+                            </ol>
+                        </div>
                     </div>
+                    <div className="column"></div>
                 </div>
             </div>
         </section>

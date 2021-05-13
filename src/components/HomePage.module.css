@@ -1,0 +1,5 @@
+.filter-wrapper{
+    display: flex;
+    height: 10rem;
+    background: rgb(245, 245, 245);
+}

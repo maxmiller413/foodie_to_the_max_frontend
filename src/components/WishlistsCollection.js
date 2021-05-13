@@ -1,6 +1,6 @@
 import React from "react"
 import WishlistCard from "./WishlistDetails"
-// import './WishlistsCollection.module.css';
+import styles from './WishlistsCollection.module.css';
 
 function WishlistsCollection({ wishlists }){
     const wishlistsArr = wishlists.map(wishlist => (
@@ -16,17 +16,19 @@ function WishlistsCollection({ wishlists }){
     console.log(wishlists)
 
     return(
-        <section className="section">
+        <section className={`section ${styles['search-results']}`}>
             <div className="container">
                 <div className="columns">
-                <div className="column card"> 
+                    <div className="column"></div>
+                    <div className="column card"> 
                     <div className="search-results"> 
-                        <header className="notification is-success is-align-items-center">Wishlists</header>
+                        <header className="notification is-success title has-text-centered">Wishlists</header>
                         <ul className="notification">
                             {wishlistsArr}
                         </ul>
                     </div>
                 </div>
+                <div className="column"></div>
 
                 
 

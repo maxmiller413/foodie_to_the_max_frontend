@@ -127,7 +127,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId, addNewWishlistPlace, wish
 
   </div>
 </div> */}
-<div className={styles['search-result']}>
+<div className={`${styles['search-result']} `}>
     <img src={image_url} alt={name} className={`${styles['restaurant-image']}`}/>
     <div className={styles['restaurant-info']}>
         <h2 className="subtitle"> {name} </h2>

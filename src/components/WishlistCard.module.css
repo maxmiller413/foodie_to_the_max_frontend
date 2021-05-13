@@ -1,7 +1,9 @@
 .search-result {
     display: flex;
-    max-width: 1100px;
-    width: 100%;
+    flex-direction: column;
+    align-items: center; 
+    background: #E62020;
+    justify-content: space-evenly;
 }
 
 .restaurant-image {
