@@ -9,6 +9,7 @@ import orig from '../photos/orig.jpg'
 import styles from "./NavBar.module.css"
 import SignUp from "./SignUp"
 import Login from "./Login"
+import WishlistForm from "./WishlistForm"
 
 
 function NavBar({ 
@@ -17,12 +18,14 @@ function NavBar({
     onToggleDarkMode,
     currentUser,
     setCurrentUser,
-    setPlaces
+    setPlaces,
+    onAddWishlist
     
 }) {
 
     const [loginModal, setLoginModal] = useState(false)
     const [signUpModal, setSignUpModal] = useState(false)
+    const [wishlistModal, setWishlistModal] = useState(false)
 
     // const [places, setPlaces] = useState([])
 
@@ -37,6 +40,10 @@ function NavBar({
 
     function handleSignUpClick(){
         setSignUpModal((signUpModal) => !signUpModal)
+    }
+
+    function handleNewWishlistClick(){
+        setWishlistModal((wishlistModal) => !wishlistModal)
     }
 
 return (
@@ -90,7 +97,7 @@ return (
                     {currentUser ? (
                         <>
                             
-                            <NavLink to="/wishlist/new" className="button is-medium is-dark" > New Wishlist </NavLink>
+                            <div className="button is-medium is-dark" onClick={handleNewWishlistClick}> New Wishlist </div>
                             {/* <NavLink to="/wishlist_place/new"  > New Wishlist Place </NavLink> */}
                             <NavLink to="/wishlists" className="button is-medium is-dark" > Wishlists </NavLink>
                             <NavLink to="/"  onClick={handleLogout} className="button is-medium is-dark" > Logout </NavLink>
@@ -107,8 +114,6 @@ return (
             </div>
         </div>
     </nav>
-
-
 
     <div className={loginModal ? 'modal is-active' : 'modal'}>
         <div className="modal-background" onClick={handleOnClick} ></div>
@@ -148,12 +153,30 @@ return (
         </div>
     </div>
 
+    <div className={wishlistModal ? 'modal is-active' : 'modal'}>
+        <div className="modal-background" onClick={handleNewWishlistClick} ></div>
+        <div className="modal-card">
+            <header className="modal-card-head">
+                <p className="modal-card-title">New Wishlist</p>
+                <button className="delete" aria-label="close" onClick={handleNewWishlistClick} ></button>
+            </header>
+
+            <section className={`modal-card-body ${styles.modal}`}>
+                <WishlistForm currentUser={currentUser} handleNewWishlistClick={handleNewWishlistClick} onAddWishlist={onAddWishlist}/>
+            </section>
+            
+            <footer className="modal-card-foot">
+                {/* <button className="button is-success">Save changes</button> */}
+                <button className="modal-close is-large" aria-label="close" onClick={handleNewWishlistClick} >Cancel</button>
+            </footer>
+        </div>
+    </div>
+
     <section className="hero is-medium" className={styles.Hero} > 
         <div className="hero-body" > 
             <div className="container has-text-centered"> 
                 <Search 
                     setPlaces={setPlaces}
-                    
                 />
             </div> 
         </div>

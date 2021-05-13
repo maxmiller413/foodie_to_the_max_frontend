@@ -120,6 +120,7 @@ console.log(placeId)
           currentUser={currentUser}
           setCurrentUser={setCurrentUser}
           setPlaces={setPlaces}
+          onAddWishlist={handleNewWishlist}
           // setWishlists={setWishlists}
         />
       
@@ -138,9 +139,9 @@ console.log(placeId)
             <Login setCurrentUser={setCurrentUser} />
           </Route> */}
 
-          <Route exact path="/wishlist/new">
+          {/* <Route exact path="/wishlist/new">
             <WishlistForm currentUser={currentUser} onAddWishlist={handleNewWishlist}/>
-          </Route>
+          </Route> */}
 
           <Route exact path="/wishlist_place/new">
             <WishlistPlaceForm currentUser={currentUser} wishlists={wishlists} placeId={placeId} handleAddWishlistPlace={handleAddWishlistPlace} />
@@ -164,7 +165,7 @@ console.log(placeId)
                 {/* <h1 className="subtitle"> Welcome, {currentUser.username} </h1> */}
                 <HomePage 
                   currentUser={currentUser} 
-                  addNewWishlist={handleNewWishlist}
+                  // addNewWishlist={handleNewWishlist}
                   addNewWishlistPlace={handleAddWishlistPlace}
                   onSetPlaceId={onHandlePlaceId}
                   places={resPlacesArr}
