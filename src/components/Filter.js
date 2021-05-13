@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Filter.module.css"
 
+
 function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview }){
 
     function handleChangeSortBy(e){
@@ -22,8 +23,9 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 		</div>
 		<div className={styles.filters}>
 
-			<button className="button has-addons">
+			<button className="button is-large has-addons">
 				<span className="icon">
+					
 					<i className="fas fa-sliders-h"></i>
 				</span>
 				<span>All Filters</span>

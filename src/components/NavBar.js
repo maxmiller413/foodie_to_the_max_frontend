@@ -79,11 +79,11 @@ return (
         <div className="nav-brand">
             <div id="navMenu" className="navbar-menu">
                 <div className="navbar-start">
-                    <NavLink to="/" className="navbar">
+                    <a href="/" className="navbar">
                         <figure className="is-64x64">
                             <img className="is-rounded" src={innerFoodie} className={styles.innerFoodieImage}  />
                         </figure>
-                    </NavLink>  
+                    </a>  
                 </div>
             </div>         
         </div>
