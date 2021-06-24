@@ -18,8 +18,8 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
     return(
     <div className={`container`}>
 		<div className={styles['search-summary']}>
-			<h1 className='subtitle'> <strong> burgers </strong> berlin </h1>
-			<p> Showing 1020 out of 543 results</p>
+			<h1 className='subtitle'> <strong> Fine Dining </strong> Chicago </h1>
+			<p> Showing 50 out of 543 results</p>
 		</div>
 		<div className={`${styles.filters} control-has-icons`}>
 
