@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
+// *** are we using reactstars? *** 
 import ReactStars from "react-rating-stars-component"
 import styles from './PlaceCard.module.css';
 import RestaurantRating from './RestaurantRating'
