@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+// *** API ***
 import {API_BASE_URL, BEARER_TOKEN} from '../hooks/yelp-api/config.js'
 import styles from "./Search.module.css"
 
