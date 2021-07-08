@@ -1,6 +1,5 @@
 import React from "react"
 import WishlistCard from "./WishlistDetails"
-// *** css ***
 import styles from './WishlistsCollection.module.css';
 
 function WishlistsCollection({ wishlists }){
