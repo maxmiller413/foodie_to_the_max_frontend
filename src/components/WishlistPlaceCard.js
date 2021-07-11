@@ -1,5 +1,5 @@
 import React from "react"
-// *** Not using this?***
+
 
 function WishlistPlaceCard(){
     return(
