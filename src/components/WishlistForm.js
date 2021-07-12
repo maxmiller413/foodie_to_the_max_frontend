@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-// *** useHistory ***
 import { useHistory } from "react-router-dom"
 import styles from "./WishlistForm.module.css"
 
