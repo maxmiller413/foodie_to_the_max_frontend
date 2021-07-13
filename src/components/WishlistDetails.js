@@ -6,7 +6,6 @@ function WishlistDetails({ wishlist }){
     
     console.log(wishlist)
     
-    // *** REVIEW LATER ***
     // const { title, id } = wishlist
     // console.log(id)
     // const wishlistPlacesArr = wishlist.map(wishlistPlace => (
