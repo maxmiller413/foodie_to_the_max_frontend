@@ -1,5 +1,4 @@
 
-// *** useParams ***
 import { useParams } from "react-router-dom"
 import React, {useEffect } from "react"
 import styles from './WishlistCard.module.css';
