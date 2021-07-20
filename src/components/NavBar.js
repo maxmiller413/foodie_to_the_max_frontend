@@ -1,6 +1,5 @@
-// import '../index.css';
+
 import React, { useState } from "react"
-// import React from "react"
 import { NavLink } from "react-router-dom";
 import DarkMode from './DarkMode'
 import innerFoodie from '../photos/innerFoodie.jpg'
