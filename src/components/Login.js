@@ -11,7 +11,6 @@ function Login ({ setCurrentUser , handleOnClick}) {
     const history = useHistory()
 
     function handleChange(e) {
-        // console.log(e.target.value)
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
