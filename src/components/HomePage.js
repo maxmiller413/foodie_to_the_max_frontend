@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-// import React from "react"
-// import Search from "./Search"
+
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 import styles from "./HomePage.module.css"
