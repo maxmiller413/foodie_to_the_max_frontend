@@ -89,7 +89,7 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 					</div>
 				</div>
 			</div>
-			{/* *** other filter options *** */}
+		
 			{/* <div className="ui item">
 				<label>SortBy Number of Reviews</label>
 			</div>
