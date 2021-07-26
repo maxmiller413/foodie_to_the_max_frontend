@@ -6,7 +6,7 @@ import styles from "./HomePage.module.css"
 
 function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview, wishlists, placeId}){
 
-    // *** old code -- set places in state? *** 
+    // *** set places in state? *** 
     // const [places, setPlaces] = useState([])
 
     return(
