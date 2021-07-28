@@ -2,7 +2,7 @@ import React from 'react'
 
 function DarkMode (){
     return (
-        // *** code from car app ***
+        // *** code from car_finder ***
         <>
             {/* <p className={isDarkMode ? 'App' : 'App light'}></p>
             <label className="switch" onClick={() => onToggleDarkMode(onToggleDarkMode => !onToggleDarkMode)}>
