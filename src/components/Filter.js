@@ -39,7 +39,7 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 					</select>
 				</div>
 				<div className="icon has-text-primary is-small is-left">
-					{/* <i className="fas fa-globe"></i> */}
+					
 					<i className="fas fa-dollar-sign is-danger"></i>
 				</div>
 			</div>
