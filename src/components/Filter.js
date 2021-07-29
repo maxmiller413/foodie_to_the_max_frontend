@@ -47,9 +47,7 @@ function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, rev
 	
 
 
-			{/* <div className="ui item">
-				<label>Sort by Rating</label>
-			</div> */}
+			
 			<div className="control has-icons-left">
 				<div className="select is-info is-light">
 					<select
