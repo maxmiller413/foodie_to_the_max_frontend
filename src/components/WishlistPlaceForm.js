@@ -6,7 +6,7 @@ function WishlistPlaceForm({wishlists, placeId, setPlaceId, addNewWishlistPlace 
     const [wishlistTitle, setWishlistTitle] = useState("")
     const history = useHistory()
     
-    // ???
+    
     // let obj = {
     //     array: []
     // };
