@@ -3,6 +3,7 @@ import styles from './RestaurantRating.module.css';
 import ReactStars from "react-rating-stars-component"
 
 function RestaurantRating({place}){
+    // ???
     return(
         <div className={styles.rating}>
             <ReactStars
