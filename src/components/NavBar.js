@@ -26,7 +26,7 @@ function NavBar({
     const [signUpModal, setSignUpModal] = useState(false)
     const [wishlistModal, setWishlistModal] = useState(false)
 
-    // *** set places state here? ***
+    
     // const [places, setPlaces] = useState([])
 
     function handleLogout(){
