@@ -16,7 +16,7 @@ function Login ({ setCurrentUser , handleOnClick}) {
 
     function handleSubmit(e) {
     e.preventDefault();
-    // request => POST /login
+    // *** request => POST /login ***
     fetch("http://localhost:3000/login", {
         method: "POST",
         headers: {
