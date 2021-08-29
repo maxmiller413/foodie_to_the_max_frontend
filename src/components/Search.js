@@ -10,7 +10,7 @@ function Search({ setPlaces }){
 
     function onhandleSubmit(e){
         e.preventDefault()
-
+// ???
         // const termSearch = {
         //     term,
         //     location
