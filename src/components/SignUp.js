@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./SignUp.module.css"
-// ???
+
 
 function SignUp ({ setCurrentUser, handleSignUpClick }) {
 
