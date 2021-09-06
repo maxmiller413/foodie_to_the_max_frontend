@@ -5,7 +5,7 @@ import WishlistPlaceCard from "./WishlistPlaceCard"
 function WishlistDetails({ wishlist }){
     
     console.log(wishlist)
-    // ???
+    // 
     // const { title, id } = wishlist
     // console.log(id)
     // const wishlistPlacesArr = wishlist.map(wishlistPlace => (
