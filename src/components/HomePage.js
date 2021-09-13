@@ -5,7 +5,7 @@ import PlacesCollection from "./PlacesCollection"
 import styles from "./HomePage.module.css"
 
 function HomePage({currentUser, addNewWishlistPlace, onSetPlaceId, places, showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview, wishlists, placeId}){
-
+// ???
 // *** HomePage ***
     // const [places, setPlaces] = useState([])
 
