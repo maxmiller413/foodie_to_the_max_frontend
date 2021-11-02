@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './RestaurantRating.module.css';
-// *** using react stars?? ***
+// *** using react stars ***
 import ReactStars from "react-rating-stars-component"
 
 function RestaurantRating({place}){
