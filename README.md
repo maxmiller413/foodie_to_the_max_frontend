@@ -1,5 +1,34 @@
 <!-- Updated Readme -->
 
+# foodie_to_the_max
+
+This app allows a user to view local bar/restaurant  ratings and information through a keyword and location search. For the avid foodies, or anyone else who wants to flag a cool establishment for future reference, this app also allows a user to create custom wishlists and add restaurants or bars to specified wishlist(s).
+## Technologies/APIs Used
+
+**Client:** React.js, JavaScript, Bulma CSS Framework,  Yelp Fusion API
+
+**Server:** Ruby, Ruby on Rails, PostgreSQL
+
+## Authors
+
+- Github:  [@maxmiller413](https://github.com/maxmiller413)
+- LinkedIn:[@Max Miller](https://www.linkedin.com/in/max-miller-a4589830/)
+## Support
+
+Please give a ⭐️ if you like this project, thank you!
+
+
+## Documentation
+
+[Yelp Fusion API Documentation](https://www.yelp.com/developers/documentation/v3)
+
+
+## Website Steps
+
+- Sign up/Log in
+- Search by keyword  (Cuisine, take out, open, etc) and location (neighborhood, address, cross streets)
+- Applicable  restaurants will appear once the search results  return with restaurant information, photos, rand ratings available.
+-  Create custom wishlists and add restaurants to chosen wishlist
 
 
 
