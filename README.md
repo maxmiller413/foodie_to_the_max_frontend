@@ -1,10 +1,10 @@
 <!-- Updated Readme -->
 
-### [Frontend](https://github.com/maxmiller413/foodie_to_the_max_frontend) | [Backend](https://github.com/maxmiller413/foodie_to_the_max_backend)
-
 # foodie_to_the_max
 
 This app allows a user to view local bar/restaurant  ratings and information through a keyword and location search. For the avid foodies, or anyone else who wants to flag a cool establishment for future reference, this app also allows a user to create custom wishlists and add restaurants or bars to specified wishlist(s).
+
+### [Frontend](https://github.com/maxmiller413/foodie_to_the_max_frontend) | [Backend](https://github.com/maxmiller413/foodie_to_the_max_backend)
 
 ## Website Steps
 
