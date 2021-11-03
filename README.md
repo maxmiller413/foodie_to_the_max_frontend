@@ -1,5 +1,6 @@
 <!-- Updated Readme -->
 
+
 # foodie_to_the_max
 
 This app allows a user to view local bar/restaurant  ratings and information through a keyword and location search. For the avid foodies, or anyone else who wants to flag a cool establishment for future reference, this app also allows a user to create custom wishlists and add restaurants or bars to specified wishlist(s).
@@ -25,12 +26,10 @@ Please give a ⭐️ if you like this project, thank you!
 
 ## Website Steps
 
-- 1) Sign up/Log in
-- 2) Search by keyword  (Cuisine, take out, open, etc) and location (neighborhood, address, cross streets)
-- 3) Applicable  restaurants will appear once the search results  return with restaurant information, photos, rand ratings available.
-- 4) Create custom wishlists and add restaurants to chosen wishlist
-
-
+  1.    Sign Up/Log In 
+  2.    Search by keyword (Cuisine, take out, open, etc) and location (neighborhood, address, cross streets)
+  3.    Applicable restaurants will appear once the search results return with restaurant information, photos, rand ratings available
+  4.    Create custom wishlists and add restaurants to chosen wishlist
 
 <!-- Default Readme -->
 <!-- # Getting Started with Create React App
