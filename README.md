@@ -25,10 +25,10 @@ Please give a ⭐️ if you like this project, thank you!
 
 ## Website Steps
 
-- Sign up/Log in
-- Search by keyword  (Cuisine, take out, open, etc) and location (neighborhood, address, cross streets)
-- Applicable  restaurants will appear once the search results  return with restaurant information, photos, rand ratings available.
--  Create custom wishlists and add restaurants to chosen wishlist
+- 1) Sign up/Log in
+- 2) Search by keyword  (Cuisine, take out, open, etc) and location (neighborhood, address, cross streets)
+- 3) Applicable  restaurants will appear once the search results  return with restaurant information, photos, rand ratings available.
+- 4) Create custom wishlists and add restaurants to chosen wishlist
 
 
 
