@@ -7,6 +7,7 @@ function Login ({ setCurrentUser , handleOnClick}) {
         username: "",
         password: "",
     })
+    // where using setErrors?
     const [errors, setErrors] = useState([])
     const history = useHistory()
 
