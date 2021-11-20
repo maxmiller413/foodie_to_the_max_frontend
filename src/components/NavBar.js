@@ -1,6 +1,7 @@
 
 import React, { useState } from "react"
 import { NavLink } from "react-router-dom";
+// not using?
 import DarkMode from './DarkMode'
 import innerFoodie from '../photos/innerFoodie.jpg'
 import Search from "./Search"
