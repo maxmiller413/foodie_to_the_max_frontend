@@ -12,7 +12,7 @@ function PlaceCard({ place, currentUser, onSetPlaceId, addNewWishlistPlace, wish
     const {id, name, image_url, categories, display_phone, location, price, rating, review_count, url, state, is_closed} = place
 
     const [wishlistPlaceModal, setWishlistPlaceModal] = useState(false)
-
+// ???
     const history = useHistory();
 
     const placeCategoriesArr = place.categories.map((category, index) => (
