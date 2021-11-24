@@ -1,5 +1,6 @@
 import React from "react"
 import PlaceCard from "./PlaceCard"
+// styles
 import styles from './PlacesCollection.module.css';
 
 function PlacesCollection({ places, currentUser, addNewWishlistPlace, onSetPlaceId, wishlists, placeId }){
