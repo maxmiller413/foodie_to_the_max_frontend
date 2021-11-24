@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "./Filter.module.css"
-
+// icons below
 
 function Filter({ showRes, setShowRes, sortBy, setSortBy, rating, setRating, review, setReview }){
 
