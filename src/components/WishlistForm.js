@@ -6,7 +6,7 @@ import styles from "./WishlistForm.module.css"
 function WishlistForm({currentUser, onAddWishlist, handleNewWishlistClick }){
 
     const [titleFormInput, setTitleFormInput] = useState([])
-    
+    // ***currentUser***
     // const {id, username, wishlist} = currentUser
     const history = useHistory()
 
