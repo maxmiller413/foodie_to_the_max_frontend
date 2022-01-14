@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-// *** useState ***
+
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
 import styles from "./HomePage.module.css"
