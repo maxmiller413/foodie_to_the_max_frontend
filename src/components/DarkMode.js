@@ -1,5 +1,5 @@
 import React from 'react'
-// *** dark mode -- not working rn ***
+// *** delete dark mode for now? ***
 function DarkMode (){
     return (
         
