@@ -21,5 +21,5 @@
 //         fetchData()
 //      }, [searchParams])
 //      return [businesses, amountResults, searchParams, setSearchParams]
-}
+// }
 

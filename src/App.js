@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react"
 import { Switch, Route } from "react-router-dom"
 import HomePage from "./components/HomePage"
 import WishlistsCollection from "./components/WishlistsCollection"
+// using right now?
 import WishlistDetails from "./components/WishlistDetails"
 import WishlistPlaceCard from "./components/WishlistPlaceCard"
 // import SignUp from "./components/SignUp"
