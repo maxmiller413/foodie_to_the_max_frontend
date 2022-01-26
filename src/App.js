@@ -1,4 +1,5 @@
 // *** Review with component hierarchy***
+// **** clean up design structure ***
 
 // import logo from './logo.svg';
 // import './App';
