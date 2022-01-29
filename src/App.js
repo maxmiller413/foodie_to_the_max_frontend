@@ -1,6 +1,6 @@
 // *** Review with component hierarchy***
 // **** clean up design structure ***
-// update figma & design
+// update figma & design structure
 
 // import logo from './logo.svg';
 // import './App';
