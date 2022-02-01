@@ -10,7 +10,7 @@ import { Switch, Route } from "react-router-dom"
 import HomePage from "./components/HomePage"
 import WishlistsCollection from "./components/WishlistsCollection"
 // using right now?
-import WishlistDetails from "./components/WishlistDetails"
+// import WishlistDetails from "./components/WishlistDetails"
 import WishlistPlaceCard from "./components/WishlistPlaceCard"
 // import SignUp from "./components/SignUp"
 // import Login from "./components/Login"
@@ -18,9 +18,9 @@ import NavBar from "./components/NavBar"
 import WishlistForm from "./components/WishlistForm"
 import WishlistCard from "./components/WishlistCard"
 // import WishlistPlaceForm from "./components/WishlistPlaceForm"
-import { useHistory } from "react-router-dom"
+// import { useHistory } from "react-router-dom"
 
-import styles from "./App.module.css"
+// import styles from "./App.module.css"
 
 function App() {
 
