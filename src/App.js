@@ -1,6 +1,6 @@
 // *** Review with component hierarchy***
 // **** clean up design structure ***
-// update figma, design structure, css
+// update figma, design structure, css -- flexbox
 
 // import logo from './logo.svg';
 // import './App';
