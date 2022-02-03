@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+// *** clean up components ***
 
 import Filter from "./Filter"
 import PlacesCollection from "./PlacesCollection"
