@@ -15,6 +15,7 @@ import WishlistPlaceCard from "./components/WishlistPlaceCard"
 // import SignUp from "./components/SignUp"
 // import Login from "./components/Login"
 import NavBar from "./components/NavBar"
+// update WishlistForm
 import WishlistForm from "./components/WishlistForm"
 import WishlistCard from "./components/WishlistCard"
 // import WishlistPlaceForm from "./components/WishlistPlaceForm"
