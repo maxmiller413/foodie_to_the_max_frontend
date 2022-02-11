@@ -1,7 +1,6 @@
 // *** Review with component hierarchy***
 // *** clean up hooks ***
 // update figma, design structure, css -- SASS
-// break up app
 
 // import logo from './logo.svg';
 // import './App';
