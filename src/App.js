@@ -1,7 +1,7 @@
 // *** Review with component hierarchy***
 // *** clean up hooks ***
-// update figma & design structure
-// review bulma & add SASS
+// *** update figma & design structure ***
+// *** review bulma & add SASS ***
 
 // import logo from './logo.svg';
 // import './App';
