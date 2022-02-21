@@ -2,6 +2,7 @@
 // *** clean up hooks ***
 // *** update figma & design structure ***
 // *** review bulma & add SASS ***
+// *** Review auth & proxy ***
 
 // import logo from './logo.svg';
 // import './App';
