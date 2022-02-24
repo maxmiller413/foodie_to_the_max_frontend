@@ -1,4 +1,4 @@
-// *** Review with component hierarchy***
+// *** Review with component hierarchy & separate app***
 // *** clean up hooks ***
 // *** update figma & design structure ***
 // *** review bulma & add SASS ***
