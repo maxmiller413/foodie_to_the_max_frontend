@@ -3,7 +3,6 @@
 // *** update figma & design structure ***
 // *** review bulma & add SASS ***
 // *** Review user auth & proxy ***
-// *** add lint/testing ***
 
 // import logo from './logo.svg';
 // import './App';
