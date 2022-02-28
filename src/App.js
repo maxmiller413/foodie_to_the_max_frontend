@@ -5,7 +5,7 @@
 // *** Review user auth & proxy + add lint testing ***
 
 // import logo from './logo.svg';
-// import './App';
+
 import React, { useState, useEffect } from "react"
 // console.log(process.env.REACT_APP_YELP_API_KEY)
 import { Switch, Route } from "react-router-dom"
