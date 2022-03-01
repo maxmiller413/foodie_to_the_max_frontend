@@ -61,6 +61,8 @@ console.log(placeId)
     } 
   }, [])
 
+  // delete below?
+  
   // useEffect(() => {
   //   const userId = localStorage.getItem("userId")
   //   if (userId){
