@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 // *** ReactStars needed? ***
-import ReactStars from "react-rating-stars-component"
+// import ReactStars from "react-rating-stars-component"
 import styles from './PlaceCard.module.css';
 import RestaurantRating from './RestaurantRating'
 import WishlistPlaceForm from "./WishlistPlaceForm"

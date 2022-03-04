@@ -18,7 +18,7 @@ import WishlistPlaceCard from "./components/WishlistPlaceCard"
 // import Login from "./components/Login"
 import NavBar from "./components/NavBar"
 // update WishlistForm
-import WishlistForm from "./components/WishlistForm"
+// import WishlistForm from "./components/WishlistForm"
 import WishlistCard from "./components/WishlistCard"
 // import WishlistPlaceForm from "./components/WishlistPlaceForm"
 // import { useHistory } from "react-router-dom"
