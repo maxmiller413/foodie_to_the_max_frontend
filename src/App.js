@@ -1,7 +1,7 @@
 // *** Review with component hierarchy & separate app***
 // *** clean up hooks ***
 // *** update figma & design structure ***
-// *** review bulma & add SASS ***
+=
 // *** Review user auth & proxy
 
 // import logo from './logo.svg';
