@@ -2,10 +2,10 @@
 import React, { useState } from "react"
 import { NavLink } from "react-router-dom";
 // ??
-import DarkMode from './DarkMode'
+// import DarkMode from './DarkMode'
 import innerFoodie from '../photos/innerFoodie.jpg'
 import Search from "./Search"
-import orig from '../photos/orig.jpg'
+// import orig from '../photos/orig.jpg'
 import styles from "./NavBar.module.css"
 import SignUp from "./SignUp"
 import Login from "./Login"
@@ -82,7 +82,7 @@ return (
                 <div className="navbar-start">
                     <a href="/" className="navbar">
                         <figure className="is-64x64">
-                            <img className="is-rounded" src={innerFoodie} className={styles.innerFoodieImage}  />
+                            <img src={innerFoodie} alt="foodie" className={styles.innerFoodieImage}  />
                         </figure>
                     </a>  
                 </div>
@@ -93,7 +93,7 @@ return (
         <div className={("navbar-end")}>
             <div className="navbar-item has-dropdown is-active">
                 <div className="buttons">
-                <NavLink to="/" className="is-active" className="button is-medium is-dark"> Home </NavLink>
+                <NavLink to="/" className="button is-medium is-dark"> Home </NavLink>
                     
                     {currentUser ? (
                         <>
@@ -173,7 +173,7 @@ return (
         </div>
     </div>
 
-    <section className="hero is-medium" className={styles.Hero} > 
+    <section  className={styles.Hero} > 
         <div className={`hero-body ${styles['form-search']}`} > 
             <div className={`${styles['form-search']}`}> 
                 <Search 

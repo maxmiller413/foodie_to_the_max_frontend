@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 // *** clean up components ***
 
 import Filter from "./Filter"
