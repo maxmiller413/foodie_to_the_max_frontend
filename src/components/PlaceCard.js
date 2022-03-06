@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import styles from './PlaceCard.module.css';
 import RestaurantRating from './RestaurantRating'
 import WishlistPlaceForm from "./WishlistPlaceForm"
-
+// review state - line 12, is_closed - line 12, history - line 16
 function PlaceCard({ place, currentUser, onSetPlaceId, addNewWishlistPlace, wishlists, placeId }){
     console.log(place)
 
