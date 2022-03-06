@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom"
 import React, {useEffect } from "react"
 import styles from './WishlistCard.module.css';
-
+// review useEffect for setWishlistPlaces line 14
 function WishlistCard({ wishlistPlaces, currentUser, setWishlistPlaces }){
      
     const params = useParams()
