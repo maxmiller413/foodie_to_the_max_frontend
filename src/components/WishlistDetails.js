@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
-// ??
+// Review if going to use -- defined but never used
 import WishlistPlaceCard from "./WishlistPlaceCard"
 
 function WishlistDetails({ wishlist }){
