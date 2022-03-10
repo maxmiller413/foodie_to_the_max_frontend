@@ -29,7 +29,7 @@ function Search({ setPlaces }){
 
 // **** REFACTOR @ END - Think can delete axios, prop-types, query-string, react-axios, yelp-api, proxy: localhost/3000 ****
 
-// CORS-Anywhere workaround
+// CORS-Anywhere heroku workaround -- prepend fetch call URL with cors proxy 
         
         fetch(`${API_BASE_URL}/businesses/search?term=${term}&location=${location}&limit=50`, requestOptions)
         .then(response => response.json())

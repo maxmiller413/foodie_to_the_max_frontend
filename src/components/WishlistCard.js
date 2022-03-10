@@ -28,6 +28,7 @@ function WishlistCard({ wishlistPlaces, currentUser, setWishlistPlaces }){
                             <header className="notification is-success title has-text-centered"> Wishlist Places </header>
                             <ol className="notification">
                                 {wishlistPlacesArr}
+                                
                             </ol>
                         </div>
                     </div>
