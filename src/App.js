@@ -2,7 +2,7 @@
 // *** clean up hooks ***
 // *** update figma & design structure ***
 // *** Review user auth & proxy
-// *** React context ***
+// *** React context  or Redux ***
 
 
 import React, { useState, useEffect } from "react"
