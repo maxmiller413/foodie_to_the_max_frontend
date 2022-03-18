@@ -1,5 +1,5 @@
 // *** Review with component hierarchy & separate app***
-// *** clean up hooks ***
+
 // *** update figma & design structure ***
 // *** Review user auth & proxy
 // *** React context  or Redux ***
