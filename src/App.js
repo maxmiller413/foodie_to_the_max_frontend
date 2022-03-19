@@ -1,8 +1,7 @@
 // *** Review with component hierarchy & separate app***
-
 // *** update figma & design structure ***
 // *** Review user auth & proxy
-// *** React context  or Redux ***
+// *** React context or Redux state mgt ***
 
 
 import React, { useState, useEffect } from "react"
